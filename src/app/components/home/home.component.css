@@ -31,3 +31,20 @@ li a:hover{
     opacity: 0.9;
     cursor: pointer;
 }
+
+.favorite-active {
+    color: #d90808;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+  .favorite-inactive {
+    color: #ccc;
+    transition: all 0.3s ease;
+  }
+  i {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  i:hover {
+    opacity: 0.8;
+  }
