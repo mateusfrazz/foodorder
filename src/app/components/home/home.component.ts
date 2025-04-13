@@ -1,26 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FoodService } from '../../services/food/food.service';
-import { Foods } from '../../shared/models/food';
+import { Produto } from '../../Interfaces/Produto';
 
 @Component({
   selector: 'app-home',
+  standalone:true,
   imports: [
     CommonModule,
+   
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-   foods:Foods[]=[];
-   isFavorite = false;
-   constructor(private fs:FoodService){}
-  
-   ngOnInit(): void {
-    this.foods = this.fs.getAll();
-   }
+export class HomeComponent implements OnInit {
+  produtos: Produto[] = []
 
-   toogleFavorite() {
-    this.isFavorite = !this.isFavorite
-   }
+  constructor( private foodService: FoodService){}
+  ngOnInit(): void {
+     this.foodService.getProdutos().subscribe((dado)=>{
+       this.produtos = dado;
+       console.log(dado);
+     })
+  }
 }
