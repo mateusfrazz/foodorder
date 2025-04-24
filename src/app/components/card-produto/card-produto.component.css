@@ -3,18 +3,18 @@
 ul li a {
   display: flex;
   flex-direction: column;
-  height: 20rem;
-  width: 20rem;
+  height: 15rem;
+  width: 15rem;
   overflow: hidden;
   border-radius: 1rem;
   border: 1px solid whitesmoke;
-  text-decoration: none !important;
-  color: #e72929;
+  color: #070707;
   margin: 0.5rem;
+  margin-top: 40px;
 }
 
 ul li a img {
-  height: 70%;
+  height: 50%;
   width: 100%;
   object-fit: cover;
   border-radius: 1rem 1rem 0 0;
