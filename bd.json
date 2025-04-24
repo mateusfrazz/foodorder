@@ -88,5 +88,18 @@
                 "imageUrl": "assets/products/food-8.jpg",
                 "category": ["Sopas"]
              }
+    ],
+    "categorias": [
+      {
+        "id":1,
+        "name": "pizzas",
+        "imageUrl":"assets/category/category.bebidas.jpg"
+      }
+    ],
+    "favoritos": [
+      {
+        "id":1,
+        "name":"Batata"
+      }
     ]
 }
