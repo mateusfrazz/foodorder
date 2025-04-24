@@ -8,7 +8,7 @@
                 "favorite": false,
                 "origins": ["Estados Unidos"],
                 "star": 4.5,
-                "imageUrl": "assets/food-1.jpg",
+                "imageUrl": "assets/products/food-1.jpg",
                 "category": ["fastfood", "batatas"]
               },
               {
@@ -19,7 +19,7 @@
                 "favorite": false,
                 "origins": ["us", "germany"],
                 "star": 3.5,
-                "imageUrl": "assets/food-2.jpg",
+                "imageUrl": "assets/products/food-2.jpg",
                 "category": ["combos", "hamburguers"]
               },
               {
@@ -30,7 +30,7 @@
                 "favorite": false,
                 "origins": ["Brazil", "germany"],
                 "star": 3.8,
-                "imageUrl": "assets/food-3.jpg",
+                "imageUrl": "assets/products/food-3.jpg",
                 "category": ["combos", "hamburguers"]
               },
               {
@@ -41,7 +41,7 @@
                 "favorite": false,
                 "origins": ["Italy", "germany"],
                 "star": 3.9,
-                "imageUrl": "assets/food-4.jpg",
+                "imageUrl": "assets/products/food-4.jpg",
                 "category": ["pizzas"]
               },
               {
@@ -52,7 +52,7 @@
                 "favorite": false,
                 "origins": ["Italy", "France"],
                 "star": 3.7,
-                "imageUrl": "assets/food-5.jpg",
+                "imageUrl": "assets/products/food-5.jpg",
                 "category": ["pizzas"]
               },
               {
@@ -63,7 +63,7 @@
                 "favorite": false,
                 "origins": ["Italy", "France"],
                 "star": 3.6,
-                "imageUrl": "assets/food-6.jpg",
+                "imageUrl": "assets/products/food-6.jpg",
                 "category": ["pizzas"]
               },
               {
@@ -74,7 +74,7 @@
                 "favorite": false,
                 "origins": ["Italy", "France"],
                 "star": 3.6,
-                "imageUrl": "assets/food-7.jpg",
+                "imageUrl": "assets/products/food-7.jpg",
                 "category": ["Sopas"]
               },
               {
@@ -85,7 +85,7 @@
                 "favorite": false,
                 "origins": ["Italy", "France"],
                 "star": 3.4,
-                "imageUrl": "assets/food-8.jpg",
+                "imageUrl": "assets/products/food-8.jpg",
                 "category": ["Sopas"]
              }
     ]
