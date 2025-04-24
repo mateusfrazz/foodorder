@@ -1,7 +1,7 @@
 header{
     background-color: white;
     padding: 0;
-    border-bottom: 1px solid #e72929;
+    border-bottom: 1px solid #777676;
 }
 
 header a {
@@ -15,7 +15,7 @@ header a:hover {
 }
 
 .container{
-    margin: 0 auto;
+    /* border: 2px solid green ; */
     display: flex;
     justify-content: space-between;
 }
@@ -33,4 +33,10 @@ nav ul{
 nav ul li a {
     padding: 1em;
     display: inline-block;
+}
+
+.form-control {
+   width: 500px;
+   height: 40px;
+   margin-top: 10px;
 }

@@ -1,20 +1,4 @@
-<!-- <ul>
-    <li *ngFor="let food of foods">
-        <a href="">
-        <img src="{{food.imageUrl}}" alt="food images">
-        <div class="content">
-            <div class="name">
-                {{food.name}}
-            </div>
-            <i class="fa-solid fa-heart" 
-            [ngClass]="{'favorite-active': isFavorite, 'favorite-inactive': !isFavorite}"
-            (click)="toogleFavorite()">
-          </i>
-        </div>
-      </a>
-    </li>
-</ul> -->
 
-<div class="container-main d-flex  flex-row  justify-content-center align-items-center">
-     
+<div class="container-main">
+     <app-card-produto  *ngFor="let produto of produtos" [produto]="produto"></app-card-produto>
 </div>

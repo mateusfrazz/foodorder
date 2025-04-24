@@ -1,0 +1,28 @@
+
+
+ul li a {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  width: 20rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid whitesmoke;
+  text-decoration: none !important;
+  color: #e72929;
+  margin: 0.5rem;
+}
+
+ul li a img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.content {
+  height: 30%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}

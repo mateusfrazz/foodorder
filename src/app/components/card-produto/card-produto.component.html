@@ -1,11 +1,19 @@
-
-<div class="cardItem">
-    <a href="">
-          <img src="" alt="">
-          <div class="content">
+<ul>
+    <li >
+        <a href="">
+        <img src="{{produto.imageUrl}}" alt="food images">
+        <div class="content d-flex flex-column">
             <div class="name">
+                {{produto.name}}
             </div>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-     </a>
-</div>
+            <div class="cookTime">
+                {{produto.cookTime}}
+            </div>
+            <div class="price">
+                <p>R$ {{produto.price}}</p>
+            </div>
+            <i class="fa-solid fa-heart" ></i>
+        </div>
+      </a>
+    </li>
+</ul>

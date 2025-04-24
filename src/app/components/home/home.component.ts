@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FoodService } from '../../services/food/food.service';
 import { Produto } from '../../Interfaces/Produto';
+import { CardProdutoComponent } from "../card-produto/card-produto.component";
 
 @Component({
   selector: 'app-home',
   standalone:true,
   imports: [
     CommonModule,
-   
-  ],
+    CardProdutoComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
