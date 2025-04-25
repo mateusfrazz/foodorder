@@ -8,4 +8,7 @@ export interface Produto {
     imageUrl:string;
     cookTime: string;
     origins:string[];
+    category:string[];
+    maisVendido:boolean;
+    promocao:boolean;
 }

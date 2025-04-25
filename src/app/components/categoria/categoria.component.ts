@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CategoriaProdutoService } from '../../services/categoriaProduto/categoria-produto.service';
 
 @Component({
   selector: 'app-categoria',
@@ -7,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './categoria.component.css'
 })
 export class CategoriaComponent {
-
+     
 }
