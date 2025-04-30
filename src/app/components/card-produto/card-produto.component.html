@@ -1,19 +1,26 @@
-<ul>
-    <li >
-        <a href="">
-        <img src="{{produto.imageUrl}}" alt="food images">
-        <div class="content d-flex flex-column">
-            <div class="name">
-                {{produto.name}}
+<div class="main-content">
+    <ul>
+        <li >
+            <a href="">
+            <img src="{{produto.imageUrl}}" alt="food images">
+            <div class="content d-flex flex-column">
+                <div class="name">
+                    <h4>
+                        {{produto.name}}
+                    </h4>
+                </div>
+                <div class="categoria">
+                    <p>{{produto.category}}</p>
+                </div>
+                <div class="price">
+                    <p>R$ {{produto.price}}</p>
+                </div>
+                <!-- <i class="fa-solid fa-heart" ></i> -->
             </div>
-            <div class="cookTime">
-                {{produto.cookTime}}
-            </div>
-            <div class="price">
-                <p>R$ {{produto.price}}</p>
-            </div>
-            <!-- <i class="fa-solid fa-heart" ></i> -->
-        </div>
-      </a>
-    </li>
-</ul>
+          </a>
+        </li>
+    </ul>
+</div>
+
+
+

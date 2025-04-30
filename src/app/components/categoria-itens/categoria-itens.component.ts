@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Produto } from '../../Interfaces/Produto';
+import { Categoria } from '../../Interfaces/CategoriaProduto';
 
 @Component({
   selector: 'app-categoria-itens',
@@ -11,5 +11,5 @@ import { Produto } from '../../Interfaces/Produto';
   styleUrl: './categoria-itens.component.css'
 })
 export class CategoriaItensComponent {
-      @Input() produto!:Produto;
+      @Input() categoria!:Categoria;
 }

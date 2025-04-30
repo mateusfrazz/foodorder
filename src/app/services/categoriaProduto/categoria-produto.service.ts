@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Produto } from '../../Interfaces/Produto';
+import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,10 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoriaProdutoService {
-  private apiUrl = 'http://localhost:3000/categoria'
+  private apiUrl = 'http://localhost:3000/categorias'
   constructor( private http: HttpClient) { }
 
-  getCategoriaProduto() :Observable<Produto[]>{
-    return this.http.get<Produto[]>(this.apiUrl)
+  getCategoriaProduto() :Observable<Categoria[]>{
+    return this.http.get<Categoria[]>(this.apiUrl)
   }
 }

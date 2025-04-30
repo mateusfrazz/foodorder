@@ -10,8 +10,8 @@
                 "star": 4.5,
                 "imageUrl": "assets/products/food-1.jpg",
                 "category": ["fastfood", "batatas"],
-                 "maisVendido":"true",
-                  "promocao": "true"
+                "maisVendido":true,
+                "promocao": true
               },
               {
                 "id": 2,
@@ -23,8 +23,8 @@
                 "star": 3.5,
                 "imageUrl": "assets/products/food-2.jpg",
                 "category": ["combos", "hamburguers"],
-                 "maisVendido":"false",
-                  "promocao": "false"
+                 "maisVendido":false,
+                  "promocao": false
               },
               {
                 "id": 3,
@@ -36,8 +36,8 @@
                 "star": 3.8,
                 "imageUrl": "assets/products/food-3.jpg",
                 "category": ["combos", "hamburguers"],
-                 "maisVendido":"false",
-                  "promocao": "true"
+                 "maisVendido":false,
+                  "promocao": true
               },
               {
                 "id": 4,
@@ -49,8 +49,8 @@
                 "star": 3.9,
                 "imageUrl": "assets/products/food-4.jpg",
                 "category": ["pizzas"],
-                 "maisVendido":"true",
-                  "promocao": "false"
+                 "maisVendido":true,
+                  "promocao": false
               },
               {
                 "id": 5,
@@ -62,12 +62,12 @@
                 "star": 3.7,
                 "imageUrl": "assets/products/food-5.jpg",
                 "category": ["pizzas"],
-                "maisVendido":"true",
-                 "promocao": "true"
+                "maisVendido":true,
+                 "promocao": true
               },
               {
                 "id": 6,
-                "name": "Pizza Basil",
+                "name": "Pizza francesa",
                 "cookTime": "10-40",
                 "price": 40,
                 "favorite": false,
@@ -75,8 +75,8 @@
                 "star": 3.6,
                 "imageUrl": "assets/products/food-6.jpg",
                 "category": ["pizzas"],
-                 "maisVendido":"false",
-                  "promocao": "false"
+                 "maisVendido":true,
+                  "promocao": false
               },
               {
                 "id": 7,
@@ -88,8 +88,8 @@
                 "star": 3.6,
                 "imageUrl": "assets/products/food-7.jpg",
                 "category": ["Sopas"],
-                 "maisVendido":"false",
-                  "promocao": "true"
+                 "maisVendido":true,
+                  "promocao": true
               },
               {
                 "id": 8,
@@ -101,15 +101,41 @@
                 "star": 3.4,
                 "imageUrl": "assets/products/food-8.jpg",
                 "category": ["Sopas"],
-                 "maisVendido":"true",
-                 "promocao": "true"
+                 "maisVendido":true,
+                 "promocao": true
              }
     ],
     "categorias": [
       {
         "id":1,
-        "name": "pizzas",
+        "name": "Bebidas",
         "imageUrl":"assets/category/category.bebidas.jpg"
+      },
+      {
+        "id":2,
+        "name": "Churrasco",
+        "imageUrl":"assets/category/category.churrasco.jpg"
+      },
+      {
+        "id":3,
+        "name": "Farmacia",
+        "imageUrl":"assets/category/category.farmacia.jpg"
+      },
+      {
+        "id":4,
+        "name": "Pet",
+        "imageUrl":"assets/category/category.pet.jpg"
+      }
+      ,
+      {
+        "id":5,
+        "name": "Mercado",
+        "imageUrl":"assets/category/category-super.jpg"
+      },
+      {
+        "id":6,
+        "name": "Lanches",
+        "imageUrl":"assets/category/category-Lanches.jpg"
       }
     ],
     "favoritos": [
