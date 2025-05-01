@@ -1,17 +1,22 @@
 header{
     background-color: white;
     padding: 0;
-    border-bottom: 1px solid #777676;
+    border-bottom: 1px solid #1f1e1e;
+}
+
+header .logo{
+    color: #4893cc !important;
 }
 
 header a {
-    color: #af1313;
+    color: #383737b6;
     text-decoration: none;
 }
 
 header a:hover {
-    background-color: #e72929;
-    color: white;
+    transition: ease-in-out 0.3s;
+    color: #60B5FF;
+    cursor: pointer;
 }
 
 .container{
