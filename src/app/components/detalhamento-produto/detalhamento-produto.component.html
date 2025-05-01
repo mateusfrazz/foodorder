@@ -1,19 +1,46 @@
-<mat-card class="produto-card" appearance="outlined">
-  <img mat-card-image [src]="produto.imageUrl" [alt]="produto.name" />
 
-  <mat-card-content>
-    <h2 class="produto-titulo">{{ produto.name }}</h2>
-    <p class="produto-descricao">{{ produto.description }}</p>
-    <div class="produto-info">
-      <span class="preco">R$ {{ produto.price}}</span>
-      <span class="tempo">⏱ {{ produto.cookTime }} min</span>
+
+<div class="produto-modal">
+  <div class="produto-card">
+    <div class="card-header">
+      <button mat-icon-button class="btn-fechar" (click)="fecharModal()">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
-  </mat-card-content>
 
-  <mat-card-actions align="end">
-    <button mat-raised-button color="primary" (click)="favoritar(produto)">
-      <mat-icon>{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
-      {{ produto.favorite ? 'Remover Favorito' : 'Favoritar' }}
-    </button>
-  </mat-card-actions>
-</mat-card>
+    <img class="produto-imagem" [src]="produto.imageUrl" [alt]="produto.name" />
+
+    <div class="produto-conteudo">
+      <h2 class="produto-titulo">{{ produto.name }}</h2>
+
+      <div class="produto-rating">
+        <mat-icon *ngFor="let star of [].constructor(5); let i = index" color="warn">
+          {{ i < produto.star ? 'star' : 'star_border' }}
+        </mat-icon>
+      </div>
+
+      <p class="produto-descricao">{{ produto.description }}</p>
+
+      <div class="produto-info">
+        <span class="preco">💰 R$ {{ produto.price.toFixed(2) }}</span>
+        <span class="tempo"><mat-icon class="tempo-icon">schedule</mat-icon>{{ produto.cookTime }} min</span>
+      </div>
+
+      <div class="produto-extra">
+        <div><strong>Origem:</strong> {{ produto.origins.join(', ') }}</div>
+        <div><strong>Categoria:</strong> {{ produto.category.join(', ') }}</div>
+      </div>
+
+      <div class="acoes">
+        <button mat-stroked-button color="accent" (click)="adicionarAoCarrinho(produto)">
+          <mat-icon>add_shopping_cart</mat-icon>
+          Adicionar ao carrinho
+        </button>
+
+        <button mat-icon-button color="warn" (click)="favoritar(produto)">
+          <mat-icon>{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
