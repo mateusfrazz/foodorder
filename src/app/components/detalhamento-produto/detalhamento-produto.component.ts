@@ -20,8 +20,16 @@ export class DetalhamentoProdutoComponent {
     this.produto = data;
   }
 
+  fecharModal(): void {
+    this.dialogRef.close();
+  }
 
   favoritar(produto: Produto): void {
 
   }
+
+  adicionarAoCarrinho(produto: Produto): void {
+
+  }
+
 }
