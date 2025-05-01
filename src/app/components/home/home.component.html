@@ -17,13 +17,18 @@
              </div>
              <div class="container-main">
                <app-card-produto  
-                 *ngFor="let produto of produtos" 
+                 *ngFor="let produto of produtosMaisVendidos" 
                  [produto]="produto">
                </app-card-produto>
              </div>
-
+             <div class="text-main">
+              <h1>Promoções Especiais </h1>
+              </div>
              <div class="container-main">
-              
+              <app-card-produto  
+              *ngFor="let produto of produtosPromocao" 
+              [produto]="produto">
+            </app-card-produto>
             </div>
      </div>
 </div>

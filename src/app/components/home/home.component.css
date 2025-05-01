@@ -20,7 +20,7 @@
 .container-main {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap;;
   justify-content: center;
   gap: 20px;
   padding: 20px;
@@ -28,9 +28,9 @@
 
 /* Essa parte não precisa mais */
 .text-main{
-  text-align: start;
-  margin-left: 14.375rem;
-  margin-top: 1.875rem;
+  text-align: center;
+  margin-left: 1.875rem;
+  margin-top: 5rem;
   margin-bottom: 30px;
   font-size: 1.2rem;
   font-weight: bold;

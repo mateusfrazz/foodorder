@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../../Interfaces/Produto';
 
@@ -12,4 +12,10 @@ import { Produto } from '../../Interfaces/Produto';
 })
 export class CardProdutoComponent {
    @Input() produto!:Produto;
+   @Output() onFavoritarProduto = new EventEmitter<Produto>()
+
+   favoritarProduto(produto: Produto) {
+      this.onFavoritarProduto.emit(produto)
+      alert("adicionado aos favoritos")
+   }
 }

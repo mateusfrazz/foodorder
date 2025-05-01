@@ -19,7 +19,8 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  produtos: Produto[] = []
+  produtosMaisVendidos: Produto[] = [] //passando os produtos mais vendidos
+  produtosPromocao: Produto[] =[] //passando os produtos em promocao
   categoriaProduto: Categoria[] = []
  
 
@@ -28,18 +29,25 @@ export class HomeComponent implements OnInit {
     private categoriaService: CategoriaProdutoService
   ){}
   ngOnInit(): void {
+
     //get dos produtos mais vendidos
     this.foodService.getProdutos().subscribe((dado) => {
-      this.produtos = dado.filter(produto => produto.maisVendido === true);
+       this.produtosMaisVendidos = dado.filter(produto => produto.maisVendido);
+       this.produtosPromocao = dado.filter(produto => produto.promocao);
     });
 
+    //get dos produtos em promocao 
+    this.foodService.getProdutos().subscribe((dadoProduto) => {
+       this.produtosPromocao = dadoProduto.filter(produto => produto.promocao);
+       console.log(this.produtosPromocao)
+    })
+
      //get das categorias
-     this.categoriaService.getCategoriaProduto().subscribe((dado)=>{
-      this.categoriaProduto = dado;
-      console.log(dado)
+      this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria)=>{
+         this.categoriaProduto = dadoCategoria;
+  
      });
 
-     //get produtos em promocao 
      
    
   }

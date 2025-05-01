@@ -23,7 +23,7 @@
                 "star": 3.5,
                 "imageUrl": "assets/products/food-2.jpg",
                 "category": ["combos", "hamburguers"],
-                 "maisVendido":false,
+                 "maisVendido":true,
                   "promocao": false
               },
               {
@@ -36,7 +36,7 @@
                 "star": 3.8,
                 "imageUrl": "assets/products/food-3.jpg",
                 "category": ["combos", "hamburguers"],
-                 "maisVendido":false,
+                 "maisVendido":true,
                   "promocao": true
               },
               {
@@ -102,8 +102,9 @@
                 "imageUrl": "assets/products/food-8.jpg",
                 "category": ["Sopas"],
                  "maisVendido":true,
-                 "promocao": true
+                 "promocao": false
              }
+
     ],
     "categorias": [
       {
@@ -141,7 +142,8 @@
     "favoritos": [
       {
         "id":1,
-        "name":"Batata"
+        "name":"Batata",
+        "imageUrl": "assets/products/food-8.jpg"
       }
     ]
 }

@@ -1,34 +1,51 @@
-ul li a {
+ul {
+  padding: 0;
+  list-style: none;
   display: flex;
-  flex-direction: row;
-  height: 9rem;
-  width: 20rem; /* Ajustei a largura para ficar mais balanceado */
-  overflow: hidden;
-  border-radius: 1rem;
-  border: 1px solid whitesmoke;
-  color: #070707;
-  margin: 0.5rem;
-  margin-top: 40px;
-  text-decoration: none;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-ul li a img {
+ul li {
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-card {
+  display: flex;
+  flex-direction: row;
+  width: 20rem;
+  height: 9rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: #070707;
+  text-decoration: none;
+  background-color: white;
+}
+
+.produto-card img {
+  width: 40%;
   height: 100%;
-  width: 40%; /* A imagem ocupará 40% da largura */
   object-fit: cover;
-  border-radius: 1rem 0 0 1rem; /* Borda arredondada no lado esquerdo */
+  border-radius: 1rem 0 0 1rem;
 }
 
 .content {
-  width: 60%; /* O texto ocupa 60% da largura do card */
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem;
-  margin-left: 25px;
-  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+  position: relative;
 }
 
-p {
-  font-size: 15px;
+.btn-favoritar {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: red;
+  align-self: flex-start;
 }

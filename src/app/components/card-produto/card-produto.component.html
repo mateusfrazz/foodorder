@@ -1,23 +1,17 @@
 <div class="main-content">
     <ul>
         <li >
-            <a href="">
-            <img src="{{produto.imageUrl}}" alt="food images">
-            <div class="content d-flex flex-column">
-                <div class="name">
-                    <h4>
-                        {{produto.name}}
-                    </h4>
+            <div class="produto-card">
+                <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
+                <div class="content">
+                  <h4>{{ produto.name }}</h4>
+                  <p>{{ produto.category }}</p>
+                  <div class="contentfavorite d-flex justify-content-between ">
+                    <p>R$ {{ produto.price }}</p>
+                    <button (click)="favoritarProduto(produto)" class="btn-favoritar">❤️</button>
+                  </div>
                 </div>
-                <div class="categoria">
-                    <p>{{produto.category}}</p>
-                </div>
-                <div class="price">
-                    <p>R$ {{produto.price}}</p>
-                </div>
-                <!-- <i class="fa-solid fa-heart" ></i> -->
-            </div>
-          </a>
+              </div>
         </li>
     </ul>
 </div>
