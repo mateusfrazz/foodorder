@@ -4,24 +4,30 @@ ul {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: flex-start; /* Garante alinhamento correto */
 }
 
 ul li {
   display: flex;
   flex-direction: column;
+  flex: 1 0 20rem; /* Faz o item ter um tamanho fixo */
+  max-width: 20rem; /* Garante que o item não ultrapasse 20rem */
 }
 
 .produto-card {
   display: flex;
   flex-direction: row;
-  width: 20rem;
-  height: 9rem;
+  width: 100%; /* Deixa o card ocupar toda a largura do item */
+  height: auto; /* Deixa a altura flexível */
   border: 1px solid whitesmoke;
   border-radius: 1rem;
   overflow: hidden;
   color: #070707;
   text-decoration: none;
   background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-bottom: 16px; /* Adiciona um espaçamento entre os cards */
 }
 
 .produto-card img {
@@ -35,10 +41,28 @@ ul li {
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Distribui os itens de maneira equilibrada */
   padding: 10px;
   margin-top: 10px;
   position: relative;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.contentfavorite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn-favoritar {
@@ -47,5 +71,33 @@ ul li {
   font-size: 20px;
   cursor: pointer;
   color: red;
-  align-self: flex-start;
+  transition: color 0.3s ease;
+}
+
+.btn-favoritar:hover {
+  color: darkred;
+}
+
+.ver-mais-btn {
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 4px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: auto; /* Faz o botão "Ver Mais" ir para a parte inferior do card */
+  width: 100%;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.ver-mais-btn:hover {
+  background-color: #303f9f;
+}
+
+/* Hover e sombra para o card */
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }

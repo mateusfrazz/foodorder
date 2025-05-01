@@ -1,20 +1,21 @@
 <div class="main-content">
-    <ul>
-        <li >
-            <div class="produto-card">
-                <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
-                <div class="content">
+  <ul>
+      <li>
+          <div class="produto-card">
+              <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
+              <div class="content">
                   <h4>{{ produto.name }}</h4>
                   <p>{{ produto.category }}</p>
-                  <div class="contentfavorite d-flex justify-content-between ">
-                    <p>R$ {{ produto.price }}</p>
-                    <button (click)="favoritarProduto(produto)" class="btn-favoritar">❤️</button>
+                  <div class="contentfavorite">
+                      <p>R$ {{ produto.price }}</p>
+                      <button (click)="favoritarProduto(produto)" class="btn-favoritar">❤️</button>
                   </div>
-                </div>
+                  <!-- Botão "Ver Mais" -->
+                  <button mat-raised-button color="accent" class="ver-mais-btn">
+                      Ver Mais
+                  </button>
               </div>
-        </li>
-    </ul>
+          </div>
+      </li>
+  </ul>
 </div>
-
-
-

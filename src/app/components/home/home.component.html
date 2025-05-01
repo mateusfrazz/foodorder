@@ -5,19 +5,19 @@
                  <p>Pedir seu delivery no TC Food Corner é rápido e prático! Conheça as categorias</p>
                </div>
                <div class="category-list">
-                 <app-categoria-itens 
-                   *ngFor="let categoria of categoriaProduto" 
+                 <app-categoria-itens
+                   *ngFor="let categoria of categoriaProduto"
                    [categoria]="categoria">
                  </app-categoria-itens>
                </div>
              </div>
-           
+
              <div class="text-main">
                   <h1>Mais Vendidos no TC Food</h1>
              </div>
              <div class="container-main">
-               <app-card-produto  
-                 *ngFor="let produto of produtosMaisVendidos" 
+               <app-card-produto
+                 *ngFor="let produto of produtosMaisVendidos"
                  [produto]="produto">
                </app-card-produto>
              </div>
@@ -25,11 +25,10 @@
               <h1>Promoções Especiais </h1>
               </div>
              <div class="container-main">
-              <app-card-produto  
-              *ngFor="let produto of produtosPromocao" 
+              <app-card-produto
+              *ngFor="let produto of produtosPromocao"
               [produto]="produto">
             </app-card-produto>
             </div>
      </div>
 </div>
-   
