@@ -1,0 +1,19 @@
+<mat-card class="produto-card" appearance="outlined">
+  <img mat-card-image [src]="produto.imageUrl" [alt]="produto.name" />
+
+  <mat-card-content>
+    <h2 class="produto-titulo">{{ produto.name }}</h2>
+    <p class="produto-descricao">{{ produto.description }}</p>
+    <div class="produto-info">
+      <span class="preco">R$ {{ produto.valorOriginal }}</span>
+      <span class="tempo">⏱ {{ produto.cookTime }} min</span>
+    </div>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-raised-button color="primary" (click)="favoritar(produto)">
+      <mat-icon>{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+      {{ produto.favorite ? 'Remover Favorito' : 'Favoritar' }}
+    </button>
+  </mat-card-actions>
+</mat-card>
