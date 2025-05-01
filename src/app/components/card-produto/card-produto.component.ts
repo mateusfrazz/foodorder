@@ -17,6 +17,7 @@ import { DetalhamentoProdutoComponent } from '../detalhamento-produto/detalhamen
 export class CardProdutoComponent {
    @Input() produto!:Produto;
    @Input() exibirPromocao:boolean = false;
+   @Input() exibirPreco:boolean = true;
    @Output() onFavoritarProduto = new EventEmitter<Produto>();
 
    constructor(private dialog: MatDialog){}
