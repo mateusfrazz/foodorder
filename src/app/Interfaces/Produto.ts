@@ -1,6 +1,7 @@
 export interface Produto { 
     id:number,
-    price:number,
+    valorOriginal :number,
+    valorPromocional:number,
     name:string;
     favorite:boolean
     star:number 
