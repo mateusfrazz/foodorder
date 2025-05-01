@@ -1,0 +1,63 @@
+.produto-card {
+  max-width: 360px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.produto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.produto-card img {
+  height: 220px;
+  object-fit: cover;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.produto-titulo {
+  margin: 16px 0 8px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1f1f1f;
+}
+
+.produto-descricao {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.produto-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.preco {
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.tempo {
+  font-style: italic;
+  color: #777;
+}
+
+mat-card-actions {
+  padding: 0 16px 16px;
+}
+
+button[mat-raised-button] {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

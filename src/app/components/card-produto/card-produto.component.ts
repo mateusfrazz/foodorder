@@ -1,6 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../../Interfaces/Produto';
+import {
+  MatDialog,
+} from '@angular/material/dialog';
+import { DetalhamentoProdutoComponent } from '../detalhamento-produto/detalhamento-produto.component';
 
 @Component({
   selector: 'app-card-produto',
@@ -12,10 +16,18 @@ import { Produto } from '../../Interfaces/Produto';
 })
 export class CardProdutoComponent {
    @Input() produto!:Produto;
-   @Output() onFavoritarProduto = new EventEmitter<Produto>()
+   @Output() onFavoritarProduto = new EventEmitter<Produto>();
+
+   constructor(private dialog: MatDialog){}
 
    favoritarProduto(produto: Produto) {
       this.onFavoritarProduto.emit(produto)
       alert("adicionado aos favoritos")
+   }
+
+   openDetalheProduto(): void {
+    const dialogRef = this.dialog.open(DetalhamentoProdutoComponent, {
+      data: this.produto
+    })
    }
 }

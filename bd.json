@@ -1,149 +1,155 @@
 {
-    "produtos":[
-            {
-                "id": 1,
-                "name": "Batata Frita",
-                "cookTime": "10-20",
-                "price": 10,
-                "favorite": false,
-                "origins": ["Estados Unidos"],
-                "star": 4.5,
-                "imageUrl": "assets/products/food-1.jpg",
-                "category": ["fastfood", "batatas"],
-                "maisVendido":true,
-                "promocao": true
-              },
-              {
-                "id": 2,
-                "name": "Hamburguer e Fritas",
-                "cookTime": "10-15",
-                "price": 5,
-                "favorite": false,
-                "origins": ["us", "germany"],
-                "star": 3.5,
-                "imageUrl": "assets/products/food-2.jpg",
-                "category": ["combos", "hamburguers"],
-                 "maisVendido":true,
-                  "promocao": false
-              },
-              {
-                "id": 3,
-                "name": "Burguer X Salad",
-                "cookTime": "10-30",
-                "price": 20,
-                "favorite": false,
-                "origins": ["Brazil", "germany"],
-                "star": 3.8,
-                "imageUrl": "assets/products/food-3.jpg",
-                "category": ["combos", "hamburguers"],
-                 "maisVendido":true,
-                  "promocao": true
-              },
-              {
-                "id": 4,
-                "name": "Pizza Peperone",
-                "cookTime": "10-40",
-                "price": 50,
-                "favorite": false,
-                "origins": ["Italy", "germany"],
-                "star": 3.9,
-                "imageUrl": "assets/products/food-4.jpg",
-                "category": ["pizzas"],
-                 "maisVendido":true,
-                  "promocao": false
-              },
-              {
-                "id": 5,
-                "name": "Pizza Potatoes",
-                "cookTime": "10-20",
-                "price": 2,
-                "favorite": false,
-                "origins": ["Italy", "France"],
-                "star": 3.7,
-                "imageUrl": "assets/products/food-5.jpg",
-                "category": ["pizzas"],
-                "maisVendido":true,
-                 "promocao": true
-              },
-              {
-                "id": 6,
-                "name": "Pizza francesa",
-                "cookTime": "10-40",
-                "price": 40,
-                "favorite": false,
-                "origins": ["Italy", "France"],
-                "star": 3.6,
-                "imageUrl": "assets/products/food-6.jpg",
-                "category": ["pizzas"],
-                 "maisVendido":true,
-                  "promocao": false
-              },
-              {
-                "id": 7,
-                "name": "Sopa Basil",
-                "cookTime": "10-60",
-                "price": 30,
-                "favorite": false,
-                "origins": ["Italy", "France"],
-                "star": 3.6,
-                "imageUrl": "assets/products/food-7.jpg",
-                "category": ["Sopas"],
-                 "maisVendido":true,
-                  "promocao": true
-              },
-              {
-                "id": 8,
-                "name": "sopa com carne",
-                "cookTime": "10-50",
-                "price": 40,
-                "favorite": false,
-                "origins": ["Italy", "France"],
-                "star": 3.4,
-                "imageUrl": "assets/products/food-8.jpg",
-                "category": ["Sopas"],
-                 "maisVendido":true,
-                 "promocao": false
-             }
-
-    ],
-    "categorias": [
-      {
-        "id":1,
-        "name": "Bebidas",
-        "imageUrl":"assets/category/category.bebidas.jpg"
-      },
-      {
-        "id":2,
-        "name": "Churrasco",
-        "imageUrl":"assets/category/category.churrasco.jpg"
-      },
-      {
-        "id":3,
-        "name": "Farmacia",
-        "imageUrl":"assets/category/category.farmacia.jpg"
-      },
-      {
-        "id":4,
-        "name": "Pet",
-        "imageUrl":"assets/category/category.pet.jpg"
-      }
-      ,
-      {
-        "id":5,
-        "name": "Mercado",
-        "imageUrl":"assets/category/category-super.jpg"
-      },
-      {
-        "id":6,
-        "name": "Lanches",
-        "imageUrl":"assets/category/category-Lanches.jpg"
-      }
-    ],
-    "favoritos": [
-      {
-        "id":1,
-        "name":"Batata",
-        "imageUrl": "assets/products/food-8.jpg"
-      }
-    ]
+  "produtos": [
+    {
+      "id": 1,
+      "name": "Batata Frita",
+      "description": "Porção crocante de batatas fritas douradas.",
+      "cookTime": "10-20",
+      "price": 10,
+      "favorite": false,
+      "origins": ["Estados Unidos"],
+      "star": 4.5,
+      "imageUrl": "assets/products/food-1.jpg",
+      "category": ["fastfood", "batatas"],
+      "maisVendido": true,
+      "promocao": true
+    },
+    {
+      "id": 2,
+      "name": "Hamburguer e Fritas",
+      "description": "Hamburguer suculento acompanhado de batatas fritas.",
+      "cookTime": "10-15",
+      "price": 5,
+      "favorite": false,
+      "origins": ["us", "germany"],
+      "star": 3.5,
+      "imageUrl": "assets/products/food-2.jpg",
+      "category": ["combos", "hamburguers"],
+      "maisVendido": true,
+      "promocao": false
+    },
+    {
+      "id": 3,
+      "name": "Burguer X Salad",
+      "description": "Delicioso hambúrguer com salada fresca.",
+      "cookTime": "10-30",
+      "price": 20,
+      "favorite": false,
+      "origins": ["Brazil", "germany"],
+      "star": 3.8,
+      "imageUrl": "assets/products/food-3.jpg",
+      "category": ["combos", "hamburguers"],
+      "maisVendido": true,
+      "promocao": true
+    },
+    {
+      "id": 4,
+      "name": "Pizza Peperone",
+      "description": "Pizza tradicional com fatias de peperone e queijo derretido.",
+      "cookTime": "10-40",
+      "price": 50,
+      "favorite": false,
+      "origins": ["Italy", "germany"],
+      "star": 3.9,
+      "imageUrl": "assets/products/food-4.jpg",
+      "category": ["pizzas"],
+      "maisVendido": true,
+      "promocao": false
+    },
+    {
+      "id": 5,
+      "name": "Pizza Potatoes",
+      "description": "Pizza especial com pedaços de batata e temperos.",
+      "cookTime": "10-20",
+      "price": 2,
+      "favorite": false,
+      "origins": ["Italy", "France"],
+      "star": 3.7,
+      "imageUrl": "assets/products/food-5.jpg",
+      "category": ["pizzas"],
+      "maisVendido": true,
+      "promocao": true
+    },
+    {
+      "id": 6,
+      "name": "Pizza francesa",
+      "description": "Pizza de inspiração francesa com ingredientes refinados.",
+      "cookTime": "10-40",
+      "price": 40,
+      "favorite": false,
+      "origins": ["Italy", "France"],
+      "star": 3.6,
+      "imageUrl": "assets/products/food-6.jpg",
+      "category": ["pizzas"],
+      "maisVendido": true,
+      "promocao": false
+    },
+    {
+      "id": 7,
+      "name": "Sopa Basil",
+      "description": "Sopa cremosa de manjericão com toque de especiarias.",
+      "cookTime": "10-60",
+      "price": 30,
+      "favorite": false,
+      "origins": ["Italy", "France"],
+      "star": 3.6,
+      "imageUrl": "assets/products/food-7.jpg",
+      "category": ["Sopas"],
+      "maisVendido": true,
+      "promocao": true
+    },
+    {
+      "id": 8,
+      "name": "sopa com carne",
+      "description": "Sopa nutritiva com pedaços suculentos de carne.",
+      "cookTime": "10-50",
+      "price": 40,
+      "favorite": false,
+      "origins": ["Italy", "France"],
+      "star": 3.4,
+      "imageUrl": "assets/products/food-8.jpg",
+      "category": ["Sopas"],
+      "maisVendido": true,
+      "promocao": false
+    }
+  ],
+  "categorias": [
+    {
+      "id": 1,
+      "name": "Bebidas",
+      "imageUrl": "assets/category/category.bebidas.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Churrasco",
+      "imageUrl": "assets/category/category.churrasco.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Farmacia",
+      "imageUrl": "assets/category/category.farmacia.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Pet",
+      "imageUrl": "assets/category/category.pet.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mercado",
+      "imageUrl": "assets/category/category-super.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Lanches",
+      "imageUrl": "assets/category/category-Lanches.jpg"
+    }
+  ],
+  "favoritos": [
+    {
+      "id": 1,
+      "name": "Batata",
+      "imageUrl": "assets/products/food-8.jpg"
+    }
+  ]
 }

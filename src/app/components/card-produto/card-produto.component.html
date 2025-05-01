@@ -10,8 +10,7 @@
                       <p>R$ {{ produto.price }}</p>
                       <button (click)="favoritarProduto(produto)" class="btn-favoritar">❤️</button>
                   </div>
-                  <!-- Botão "Ver Mais" -->
-                  <button mat-raised-button color="accent" class="ver-mais-btn">
+                  <button mat-raised-button color="accent" class="ver-mais-btn" (click)="openDetalheProduto()">
                       Ver Mais
                   </button>
               </div>

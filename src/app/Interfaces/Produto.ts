@@ -1,11 +1,12 @@
-export interface Produto { 
+export interface Produto {
     id:number,
     price:number,
     name:string;
     favorite:boolean
-    star:number 
+    star:number
     tags:string[];
     imageUrl:string;
+    description:string;
     cookTime: string;
     origins:string[];
     category:string[];
