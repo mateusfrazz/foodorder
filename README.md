@@ -1,5 +1,5 @@
 # Foodorder
 
-Foodorder é um projeto feito para estudos no framework  [Angular CLI] version 19.2.7.
+Foodorder é um projeto feito para estudos no framework  [Angular] na versão  19.2.7.
 
 
