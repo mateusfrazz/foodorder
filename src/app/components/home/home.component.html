@@ -27,6 +27,7 @@
              <div class="container-main">
               <app-card-produto
               *ngFor="let produto of produtosPromocao"
+              [exibirPromocao]="true"
               [produto]="produto">
             </app-card-produto>
             </div>

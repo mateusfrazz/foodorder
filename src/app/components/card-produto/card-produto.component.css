@@ -100,3 +100,13 @@ p {
   transform: translateY(-5px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
+
+.precoPromocao {
+ color: green;
+ font-weight: bold;
+}
+
+.precoPadrao {
+  text-decoration: line-through;
+
+}
