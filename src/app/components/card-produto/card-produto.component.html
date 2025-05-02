@@ -1,20 +1,39 @@
 <div class="main-content">
   <ul>
-      <li>
-          <div class="produto-card">
-              <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
-              <div class="content">
-                  <h4>{{ produto.name }}</h4>
-                  <p>{{ produto.category }}</p>
-                  <div class="contentfavorite">
-                      <p>R$ {{ produto.price }}</p>
-                      <button (click)="favoritarProduto(produto)" class="btn-favoritar">❤️</button>
-                  </div>
-                  <button mat-raised-button color="accent" class="ver-mais-btn" (click)="openDetalheProduto()">
-                      Ver Mais
-                  </button>
+    <li>
+      <div class="produto-card">
+        <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
+        <div class="content">
+          <h4>{{ produto.name }}</h4>
+          <p>{{ produto.category }}</p>
+          <div class="contentfavorite d-flex justify-content-between">
+            <div class="content-price">
+              <div class="price-padrao">
+                <p *ngIf="exibirPreco" class="precoPadraosemDesconto">R$ {{ produto.price }}</p>
+                <p *ngIf="exibirPromocao" class="precoPadrao"
+                >R$ {{ produto.price }}
+                </p>
               </div>
+              <div class="price-desconto">
+                <p *ngIf="exibirPromocao" class="precoPromocao">
+                  R$ {{ produto.valorPromocional }}
+                </p>
+              </div>
+            </div>
+            <button (click)="favoritarProduto(produto)" class="btn-favoritar">
+              ❤️
+            </button>
           </div>
-      </li>
+          <button
+            mat-raised-button
+            color="accent"
+            class="ver-mais-btn"
+            (click)="openDetalheProduto()"
+          >
+            Ver Mais
+          </button>
+        </div>
+      </div>
+    </li>
   </ul>
 </div>

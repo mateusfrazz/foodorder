@@ -45,10 +45,7 @@ export class HomeComponent implements OnInit {
      //get das categorias
       this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria)=>{
          this.categoriaProduto = dadoCategoria;
-  
      });
-
-     
-   
   }
+
 }
