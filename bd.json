@@ -10,7 +10,7 @@
     "favorite": false,
     "origins": ["Estados Unidos"],
     "star": 4.5,
-    "imageUrl": "assets/products/food-1.jpg",
+    "imageUrl": "assets/products/lanches/batata-frita/food-1.jpg",
     "category": ["fastfood", "batatas"],
     "maisVendido": true,
     "promocao": true
@@ -25,7 +25,7 @@
     "favorite": false,
     "origins": ["us", "germany"],
     "star": 3.5,
-    "imageUrl": "assets/products/food-2.jpg",
+    "imageUrl": "assets/products/lanches/hamburguers/food-2.jpg",
     "category": ["combos", "hamburguers"],
     "maisVendido": true,
     "promocao": false
@@ -40,7 +40,7 @@
     "favorite": false,
     "origins": ["Brazil", "germany"],
     "star": 3.8,
-    "imageUrl": "assets/products/food-3.jpg",
+    "imageUrl": "assets/products/lanches/hamburguers/food-3.jpg",
     "category": ["combos", "hamburguers"],
     "maisVendido": true,
     "promocao": true
@@ -119,6 +119,21 @@
     "category": ["Sopas"],
     "maisVendido": true,
     "promocao": false
+  },
+  {
+    "id": 9,
+    "name": "Batata Suprema",
+    "description": "Porção crocante de batatas fritas douradas.",
+    "cookTime": "10-20",
+    "price": 15,
+    "valorPromocional": 11,
+    "favorite": false,
+    "origins": ["Estados Unidos"],
+    "star": 4.5,
+    "imageUrl": "assets/products/lanches/batata-frita/batataSuprema.png",
+    "category": ["lanches", "batatas"],
+    "maisVendido": true,
+    "promocao": true
   }
 ],
   "categorias": [
