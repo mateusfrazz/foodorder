@@ -12,8 +12,8 @@
       <h2 class="produto-titulo">{{ produto.name }}</h2>
 
       <div class="produto-rating">
-        <mat-icon *ngFor="let star of [].constructor(5); let i = index" color="warn">
-          {{ i < produto.star ? 'star' : 'star_border' }}
+        <mat-icon *ngFor="let star of stars" color="warn">
+          {{ star <= produto.star ? 'star' : (star - 0.5 <= produto.star ? 'star_half' : 'star_border') }}
         </mat-icon>
       </div>
 
