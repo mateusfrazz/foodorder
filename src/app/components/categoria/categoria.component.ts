@@ -10,7 +10,8 @@ import { CategoriaItensComponent } from "../categoria-itens/categoria-itens.comp
   standalone:true,
   imports: [
     CommonModule,
-    CategoriaItensComponent
+    CategoriaItensComponent,
+    CardProdutoComponent
 ],
   templateUrl: './categoria.component.html',
   styleUrl: './categoria.component.css'

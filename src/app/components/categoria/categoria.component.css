@@ -1,6 +1,6 @@
 .container-main {
     max-width: 100%;
-    height: 100%;
+    height: auto;
     border: 3px solid green;
 }
 
@@ -8,10 +8,14 @@
    width: 80%;
    height: 100%;
    border: 3px solid black;
+   gap: 10px;
 } 
 
 .container-content .categorias {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    border: 2px solid red;
     gap: 10px;
 }
