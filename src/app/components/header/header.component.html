@@ -1,27 +1,3 @@
-<!-- <header class="">
-    <div class="container">
-        <a  routerLink="/" class="logo">Bistrô Brasil</a>
-       
-        <input 
-        class="form-control "
-        type="search" placeholder="Pesquisar"
-        aria-label="Pesquisar"
-        >
-        <nav>
-            <ul class="d-flex flex-row">
-                <li>
-                    <a routerLink="/favoritos">Favoritos</a>
-                 </li>
-                <li>
-                    <a  routerLink="/categorias" routerLinkActive="active">Categorias</a>
-                </li>
-                <li>
-                    <a routerLink="/cart-page"><mat-icon>add_shopping_cart</mat-icon></a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header> -->
 
 <header>
     <nav class="d-flex flex-row justify-content-center align-items-center">
@@ -36,13 +12,13 @@
       <div class="navcontent">
         <ul class="d-flex flex-row justify-content-center align-items-center list-unstyled pt-3">
           <li class="mx-2">
-            <a routerLink="/home" routerLinkActive="active">Inicio</a>
+            <a [routerLink]="['/home']">Inicio</a>
           </li>
           <li class="mx-2">
-            <a routerLink="/Bebidas" routerLinkActive="active">Bebidas</a>
+            <a [routerLink]="['/categoria', 'bebidas']" routerLinkActive="active">Bebidas</a>
           </li>
           <li class="mx-2">
-            <a routerLink="/churrasco" routerLinkActive="active">Churrasco</a>
+            <a [routerLink]="['/categoria' ,'churrasco']">Churrasco</a>
           </li>
           <li class="mx-2">
             <a routerLink="/farmacia" routerLinkActive="active">Farmacia</a>
