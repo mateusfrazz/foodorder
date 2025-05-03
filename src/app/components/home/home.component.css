@@ -26,7 +26,6 @@
   padding: 20px;
 }
 
-/* Essa parte não precisa mais */
 .text-main{
   text-align: center;
   margin-left: 1.875rem;
@@ -34,10 +33,18 @@
   margin-bottom: 30px;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #2c2c2c;
 }
 
+.text-main h1::after {
+  content: '';
+  display: block;
+  margin: 12px auto 0;
+  width: 60px;
+  height: 4px;
+  background-color: #3f51b5;
+  border-radius: 2px;
+}
 .main{
   width: 100%;
-
-  /* border: 2px solid green ; */
 }
