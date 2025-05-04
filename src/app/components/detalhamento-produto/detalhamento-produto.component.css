@@ -59,6 +59,11 @@
   vertical-align: middle;
 }
 
+.produto-rating .star-icon {
+  color: #ffc107;
+  font-size: 20px;
+}
+
 .produto-descricao {
   font-size: 1.1rem;
   color: #444;
