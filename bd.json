@@ -28,7 +28,7 @@
       "imageUrl": "assets/products/lanches/hamburguers/food-2.jpg",
       "category": ["combos", "hamburguers"],
       "maisVendido": true,
-      "promocao": false
+      "promocao": true
     },
     {
       "id": 3,
@@ -58,7 +58,7 @@
       "imageUrl": "assets/products/lanches/pizzas/food-4.jpg",
       "category": ["pizzas"],
       "maisVendido": true,
-      "promocao": false
+      "promocao": true
     },
     {
       "id": 5,
@@ -225,23 +225,40 @@
       "maisVendido": true,
       "promocao": true
     }
+    
   ],
   "categorias": [
     {
       "id": 1,
-      "name": "Bebidas Premium",
+      "name": "Bebidas ",
       "imageUrl": "assets/category/category.bebidas.jpg"
     },
     {
       "id": 2,
-      "name": "Churrasco Gourmet",
+      "name": "Churrasco ",
       "imageUrl": "assets/category/category.churrasco.jpg"
     },
     {
-      "id": 6,
-      "name": "Lanches Especiais",
+      "id": 3,
+      "name": "Lanches",
       "imageUrl": "assets/category/category-lanches.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Farmacia",
+      "imageUrl": "assets/category/category.farmacia.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mercado",
+      "imageUrl": "assets/category/category-super.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Pet",
+      "imageUrl": "assets/category/category.pet.jpg"
     }
+
   ],
   "favoritos": [
     {
