@@ -6,6 +6,7 @@ import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CategoriaProdutoService } from '../../services/categoriaProduto/categoria-produto.service';
 import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
   imports: [
     CommonModule,
     CardProdutoComponent,
-    CategoriaItensComponent
+    CategoriaItensComponent,
+    RouterModule,
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

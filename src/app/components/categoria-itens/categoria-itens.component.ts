@@ -11,5 +11,5 @@ import { Categoria } from '../../Interfaces/CategoriaProduto';
   styleUrl: './categoria-itens.component.css'
 })
 export class CategoriaItensComponent {
-      @Input() categoria!:Categoria;
+  @Input() categoria!:Categoria;
 }

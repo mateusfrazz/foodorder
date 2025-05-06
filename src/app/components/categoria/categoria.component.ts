@@ -4,13 +4,14 @@ import { CategoriaProdutoService } from '../../services/categoriaProduto/categor
 import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CategoriaItensComponent } from "../categoria-itens/categoria-itens.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categoria',
   standalone:true,
   imports: [
     CommonModule,
-    CategoriaItensComponent
+    RouterModule,
 ],
   templateUrl: './categoria.component.html',
   styleUrl: './categoria.component.css'
