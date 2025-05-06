@@ -107,5 +107,21 @@ p {
 
 .precoPadrao {
   text-decoration: line-through;
-
 }
+
+.chip-desconto {
+  width: 60px;
+  height: 20px;
+  font-size: 12px;
+  padding: 0 6px;
+  line-height: 20px;
+}
+
+.chip-texto {
+  padding-top: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: start;
+}
+
+

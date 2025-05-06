@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
     //get dos produtos em promocao 
     this.foodService.getProdutos().subscribe((dadoProduto) => {
        this.produtosPromocao = dadoProduto.filter(produto => produto.promocao);
-       console.log(this.produtosPromocao)
     })
 
      //get das categorias
@@ -47,5 +46,12 @@ export class HomeComponent implements OnInit {
          this.categoriaProduto = dadoCategoria;
      });
   }
+  
 
+  //metodo para exibir a porcentagem de desconto
+  getDescontoPercentual(precoOriginal: number, precoComDesconto: number): number {
+    if (!precoOriginal || precoOriginal <= 0) return 0;
+    const desconto = ((precoOriginal - precoComDesconto) / precoOriginal) * 100;
+    return Math.round(desconto);
+  }  
 }

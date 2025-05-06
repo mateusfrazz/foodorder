@@ -29,7 +29,9 @@
               *ngFor="let produto of produtosPromocao"
               [exibirPromocao]="true"
               [exibirPreco]="false"
-              [produto]="produto">
+              [produto]="produto"
+              [desconto]="getDescontoPercentual(produto.price, produto.valorPromocional)"
+              >
             </app-card-produto>
             </div>
      </div>

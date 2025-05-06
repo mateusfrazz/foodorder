@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Produto } from '../../Interfaces/Produto';
 import {
@@ -13,6 +13,8 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatChipsModule} from '@angular/material/chips';
+
 
 @Component({
   selector: 'app-card-produto',
@@ -21,14 +23,17 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     MatSnackBarModule,
+    MatChipsModule
   ],
   templateUrl: './card-produto.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './card-produto.component.css'
 })
 export class CardProdutoComponent {
    @Input() produto!:Produto;
    @Input() exibirPromocao:boolean = false;
    @Input() exibirPreco:boolean = true;
+   @Input() desconto!:number;
    @Output() onFavoritarProduto = new EventEmitter<Produto>();
 
    constructor(private dialog: MatDialog, private _snackBar: MatSnackBar){}
