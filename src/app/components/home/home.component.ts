@@ -19,9 +19,14 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  produtosMaisVendidos: Produto[] = [] //passando os produtos mais vendidos
-  produtosPromocao: Produto[] =[] //passando os produtos em promocao
-  categoriaProduto: Categoria[] = []
+  produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
+  produtosPromocao: Produto[] =[]; //passando os produtos em promocao
+  categoriaProduto: Categoria[] = [];
+  
+   //interporlaão de textos do template
+  textMain = ' Mais Vendidos no Bistrô';
+  textMainPromocao = 'Promoções Especiais';
+
  
 
   constructor( 
