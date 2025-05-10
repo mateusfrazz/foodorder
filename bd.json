@@ -17,6 +17,7 @@
   },
   {
     "id": 2,
+    "idCategoria":6,
     "name": "Hamburguer e Fritas",
     "description": "Hamburguer suculento acompanhado de batatas fritas.",
     "cookTime": "10-15",
