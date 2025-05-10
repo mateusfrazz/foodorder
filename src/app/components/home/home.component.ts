@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   categoriaProduto: Categoria[] = [];
   
    //interporlaão de textos do template
+  textCategoria = 'Pedir seu delivery no Bistrô é rápido e prático! Conheça as categorias';
   textMain = ' Mais Vendidos no Bistrô';
   textMainPromocao = 'Promoções Especiais';
 
