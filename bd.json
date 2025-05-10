@@ -2,6 +2,7 @@
   "produtos": [
     {
       "id": 1,
+      "idCategoria": 3,
       "name": "Batata Frita Crocante",
       "description": "Deliciosa porção de batatas fritas douradas, crocantes por fora e macias por dentro, perfeita para acompanhar seu lanche!",
       "cookTime": "10-20",
@@ -17,6 +18,7 @@
     },
     {
       "id": 2,
+      "idCategoria": 3,
       "name": "Combo Hamburguer Supremo + Fritas",
       "description": "Hambúrguer suculento com queijo derretido, acompanhado de batatas fritas crocantes. Uma explosão de sabores!",
       "cookTime": "10-15",
@@ -32,6 +34,7 @@
     },
     {
       "id": 3,
+      "idCategoria": 3,
       "name": "Burguer Salad Premium",
       "description": "Hambúrguer gourmet com blend especial, queijo derretido e salada fresca. Uma opção saudável e saborosa!",
       "cookTime": "10-30",
@@ -47,6 +50,7 @@
     },
     {
       "id": 4,
+      "idCategoria": 3,
       "name": "Pizza Peperoni Especial",
       "description": "Pizza artesanal com molho de tomate caseiro, peperoni premium e queijo mussarela derretido. Imperdível!",
       "cookTime": "10-40",
@@ -62,6 +66,7 @@
     },
     {
       "id": 5,
+      "idCategoria": 3,
       "name": "Pizza Batata Rústica",
       "description": "Pizza única com batatas rústicas, bacon crocante e queijos especiais. Uma experiência gastronômica!",
       "cookTime": "10-20",
@@ -77,6 +82,7 @@
     },
     {
       "id": 48,
+      "idCategoria": 1,
       "name": "Cerveja Corona Premium (330ml)",
       "description": "A clássica cerveja mexicana em garrafa longneck, perfeita para refrescar seu dia com um toque de limão!",
       "cookTime": "10-20",
@@ -92,6 +98,7 @@
     },
     {
       "id": 49,
+      "idCategoria": 1,
       "name": "Cerveja Guinness Extra Stout (330ml)",
       "description": "A lendária cerveja preta irlandesa com sabor intenso e cremosidade incomparável. Para os verdadeiros apreciadores!",
       "cookTime": "10-20",
@@ -107,6 +114,7 @@
     },
     {
       "id": 50,
+      "idCategoria": 1,
       "name": "Cerveja Peroni Nastro Azzurro (330ml)",
       "description": "A refinada cerveja italiana, leve e refrescante, com um toque de sofisticação mediterrânea.",
       "cookTime": "10-20",
@@ -122,6 +130,7 @@
     },
     {
       "id": 53,
+      "idCategoria": 1,
       "name": "Blueberry Morango (500ml)",
       "description": "Drink refrescante com vodka, blueberry e morangos frescos. Doce, frutado e irresistível!",
       "cookTime": "10-20",
@@ -137,6 +146,7 @@
     },
     {
       "id": 55,
+      "idCategoria": 1,
       "name": "Caipirinha de Limão Clássica (500ml)",
       "description": "A autêntica caipirinha brasileira feita com limão fresco, açúcar e cachaça premium. Sabor inigualável!",
       "cookTime": "10-20",
@@ -152,6 +162,7 @@
     },
     {
       "id": 43,
+      "idCategoria": 2,
       "name": "Calabresa Defumada Premium (300g)",
       "description": "Calabresa artesanal defumada, cortada em rodelas grossas e grelhada no ponto perfeito. Sabor inconfundível!",
       "cookTime": "10-20",
@@ -167,6 +178,7 @@
     },
     {
       "id": 44,
+      "idCategoria": 2,
       "name": "Picanha ao Queijo Gourmet (400g)",
       "description": "Suculentos pedaços de picanha grelhados com queijo derretido. Uma combinação que derrete na boca!",
       "cookTime": "10-20",
@@ -182,6 +194,7 @@
     },
     {
       "id": 45,
+      "idCategoria": 2,
       "name": "Picanha Nobre (500g)",
       "description": "Cortes premium de picanha, grelhados no ponto ideal para manter a suculência e o sabor inigualável.",
       "cookTime": "10-20",
@@ -197,6 +210,7 @@
     },
     {
       "id": 59,
+      "idCategoria": 1,
       "name": "Coca-Cola Gelada (600ml)",
       "description": "A tradicional Coca-Cola em garrafa, geladinha e com aquele sabor inconfundível que todos amam!",
       "cookTime": "10-20",
@@ -212,6 +226,7 @@
     },
     {
       "id": 64,
+      "idCategoria": 1,
       "name": "Suco Natural de Goiaba (500ml)",
       "description": "Suco 100% natural feito na hora com goiabas frescas. Doce, nutritivo e refrescante!",
       "cookTime": "",
@@ -225,7 +240,6 @@
       "maisVendido": true,
       "promocao": true
     }
-    
   ],
   "categorias": [
     {
@@ -258,7 +272,6 @@
       "name": "Pet",
       "imageUrl": "assets/category/category.pet.jpg"
     }
-
   ],
   "favoritos": [
     {
