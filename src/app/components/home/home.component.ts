@@ -20,7 +20,7 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
 })
 export class HomeComponent implements OnInit {
   produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
-  produtosPromocao: Produto[] =[]; //passando os produtos em promocao
+  produtosPromocao: Produto[] = []; //passando os produtos em promocao
   categoriaProduto: Categoria[] = [];
   
    //interporlaão de textos do template
