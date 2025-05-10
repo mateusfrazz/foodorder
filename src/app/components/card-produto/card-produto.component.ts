@@ -35,6 +35,7 @@ export class CardProdutoComponent {
    @Input() exibirPreco:boolean = true;
    @Input() desconto!:number;
    @Output() onFavoritarProduto = new EventEmitter<Produto>();
+ 
 
    constructor(private dialog: MatDialog, private _snackBar: MatSnackBar){}
 

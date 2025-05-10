@@ -25,7 +25,10 @@
                   </mat-chip-set> 
               </div>
             </div>
-            <button mat-icon-button (click)="favoritarProduto(produto)" class="btn-favoritar">
+            <button 
+            mat-icon-button (click)="favoritarProduto(produto)" 
+            class="btn-favoritar"
+            >
               <mat-icon color="warn">{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
             </button>
           </div>
