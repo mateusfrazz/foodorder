@@ -19,9 +19,15 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
-  produtosMaisVendidos: Produto[] = [] //passando os produtos mais vendidos
-  produtosPromocao: Produto[] =[] //passando os produtos em promocao
-  categoriaProduto: Categoria[] = []
+  produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
+  produtosPromocao: Produto[] =[]; //passando os produtos em promocao
+  categoriaProduto: Categoria[] = [];
+  
+   //interporlaão de textos do template
+  textCategoria = 'Pedir seu delivery no Bistrô é rápido e prático! Conheça as categorias';
+  textMain = ' Mais Vendidos no Bistrô';
+  textMainPromocao = 'Promoções Especiais';
+
  
 
   constructor( 
@@ -39,7 +45,6 @@ export class HomeComponent implements OnInit {
     //get dos produtos em promocao 
     this.foodService.getProdutos().subscribe((dadoProduto) => {
        this.produtosPromocao = dadoProduto.filter(produto => produto.promocao);
-       console.log(this.produtosPromocao)
     })
 
      //get das categorias
@@ -47,5 +52,12 @@ export class HomeComponent implements OnInit {
          this.categoriaProduto = dadoCategoria;
      });
   }
+  
 
+  //metodo para exibir a porcentagem de desconto
+  getDescontoPercentual(precoOriginal: number, precoComDesconto: number): number {
+    if (!precoOriginal || precoOriginal <= 0) return 0;
+    const desconto = ((precoOriginal - precoComDesconto) / precoOriginal) * 100;
+    return Math.round(desconto);
+  }  
 }

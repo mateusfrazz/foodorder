@@ -4,10 +4,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Produto } from '../../Interfaces/Produto';
 import {MatIconModule} from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detalhamento-produto',
-  imports: [MatCardModule, MatButtonModule, MatIconModule],
+  imports: [MatCardModule, MatButtonModule, MatIconModule, CommonModule],
   templateUrl: './detalhamento-produto.component.html',
   styleUrl: './detalhamento-produto.component.css',
 })

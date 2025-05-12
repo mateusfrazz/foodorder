@@ -125,23 +125,23 @@
   "categorias": [
     {
       "id": 1,
-      "name": "Bebidas",
+      "name": "Bebidas ",
       "imageUrl": "assets/category/category.bebidas.jpg"
     },
     {
       "id": 2,
-      "name": "Churrasco",
+      "name": "Churrasco ",
       "imageUrl": "assets/category/category.churrasco.jpg"
     },
     {
       "id": 3,
-      "name": "Farmacia",
-      "imageUrl": "assets/category/category.farmacia.jpg"
+      "name": "Lanches",
+      "imageUrl": "assets/category/category-lanches.jpg"
     },
     {
       "id": 4,
-      "name": "Pet",
-      "imageUrl": "assets/category/category.pet.jpg"
+      "name": "Farmacia",
+      "imageUrl": "assets/category/category.farmacia.jpg"
     },
     {
       "id": 5,
@@ -150,14 +150,15 @@
     },
     {
       "id": 6,
-      "name": "Lanches",
-      "imageUrl": "assets/category/category-Lanches.jpg"
+      "name": "Pet",
+      "imageUrl": "assets/category/category.pet.jpg"
     }
+
   ],
   "favoritos": [
     {
       "id": 1,
-      "name": "Batata",
+      "name": "Batata Frita Crocante",
       "imageUrl": "assets/products/food-8.jpg"
     }
   ]
