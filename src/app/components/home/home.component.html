@@ -1,4 +1,8 @@
 <main class="main d-flex justify-content-center">
+  <app-header (filtro)="onFiltroRecebido($event)"></app-header>
+    <div *ngFor="let produto of produtosFiltrados">
+  <p>{{ produto.name }}</p>
+</div>
      <div class="main-container">
           <div class="category-main">
                <div class="category-text">

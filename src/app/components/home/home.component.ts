@@ -6,6 +6,7 @@ import { CardProdutoComponent } from "../card-produto/card-produto.component";
 import { CategoriaProdutoService } from '../../services/categoriaProduto/categoria-produto.service';
 import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.comp
   imports: [
     CommonModule,
     CardProdutoComponent,
-    CategoriaItensComponent
+    CategoriaItensComponent,
+    HeaderComponent
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -22,6 +24,8 @@ export class HomeComponent implements OnInit {
   produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
   produtosPromocao: Produto[] = []; //passando os produtos em promocao
   categoriaProduto: Categoria[] = [];
+  produtosFiltrados: Produto[] = []; //passando os produtos filtrados
+  produtos: Produto[] = [];
   
    //interporlaão de textos do template
   textCategoria = 'Pedir seu delivery no Bistrô é rápido e prático! Conheça as categorias';
@@ -51,6 +55,11 @@ export class HomeComponent implements OnInit {
       this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria)=>{
          this.categoriaProduto = dadoCategoria;
      });
+
+      this.foodService.getProdutos().subscribe((dados) => {
+      this.produtos = dados;
+      this.produtosFiltrados = dados;
+    });
   }
   
 
@@ -60,4 +69,11 @@ export class HomeComponent implements OnInit {
     const desconto = ((precoOriginal - precoComDesconto) / precoOriginal) * 100;
     return Math.round(desconto);
   }  
+
+  //metodo para filtrar os produtos
+   onFiltroRecebido(filtro: string) {
+    this.produtosFiltrados = this.produtos.filter(p =>
+      p.name.toLowerCase().includes(filtro)
+    );
+  }
 }
