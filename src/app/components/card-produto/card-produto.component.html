@@ -9,27 +9,37 @@
           <div class="contentfavorite d-flex justify-content-between">
             <div class="content-price">
               <div class="price-padrao">
-                <p *ngIf="exibirPreco" class="precoPadraosemDesconto">R$ {{ produto.price }}</p>
-                <p *ngIf="exibirPromocao" class="precoPadrao">R$ {{ produto.price }}</p>
+                <p *ngIf="exibirPreco" class="precoPadraosemDesconto">
+                  R$ {{ produto.price }}
+                </p>
+                <p *ngIf="exibirPromocao" class="precoPadrao">
+                  R$ {{ produto.price }}
+                </p>
               </div>
               <div class="price-desconto d-flex flex-column">
-                <p 
-                *ngIf="exibirPromocao" class="precoPromocao">R$ {{ produto.valorPromocional }}
+                <p *ngIf="exibirPromocao" class="precoPromocao">
+                  R$ {{ produto.valorPromocional }}
                 </p>
-                  <mat-chip-set *ngIf="desconto > 0 " class="d-flex justify-content-center align-items-center">
-                    <mat-chip class="chip-desconto d-flex justify-content-center align-items-center">
-                      <p class="chip-texto">
-                        {{desconto}} OFF%
-                      </p>
-                    </mat-chip> 
-                  </mat-chip-set> 
+                <mat-chip-set
+                  *ngIf="desconto > 0"
+                  class="d-flex justify-content-center align-items-center"
+                >
+                  <mat-chip
+                    class="chip-desconto d-flex justify-content-center align-items-center"
+                  >
+                    <p class="chip-texto">{{ desconto }} OFF%</p>
+                  </mat-chip>
+                </mat-chip-set>
               </div>
             </div>
-            <button 
-            mat-icon-button (click)="favoritarProduto(produto)" 
-            class="btn-favoritar"
+            <button
+              mat-icon-button
+              (click)="favoritarProduto(produto)"
+              class="btn-favoritar"
             >
-              <mat-icon color="warn">{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+              <mat-icon color="warn">{{
+                produto.favorite ? "favorite" : "favorite_border"
+              }}</mat-icon>
             </button>
           </div>
           <button class="ver-mais-btn" (click)="openDetalheProduto()">
