@@ -1,68 +1,55 @@
 <main class="main d-flex justify-content-center">
   <app-header (filtro)="onFiltroRecebido($event)"></app-header>
-    <div *ngFor="let produto of produtosFiltrados">
-  <p>{{ produto.name }}</p>
-</div>
-     <div class="main-container">
-          <div class="category-main">
-               <div class="category-text">
-                 <p>{{textCategoria}}</p>
-               </div>
-               <div class="category-list">
-                 <app-categoria-itens
-                   *ngFor="let categoria of categoriaProduto"
-                   [categoria]="categoria">
-                 </app-categoria-itens>
-               </div>
-             </div>
+  <div *ngFor="let produto of produtosFiltrados">
+    <p>{{ produto.name }}</p>
+  </div>
+  <div class="main-container">
+    <div class="category-main">
+      <div class="category-text">
+        <p>{{ textCategoria }}</p>
+      </div>
+      <div class="category-list">
+        <app-categoria-itens
+          *ngFor="let categoria of categoriaProduto"
+          [categoria]="categoria"
+        >
+        </app-categoria-itens>
+      </div>
+    </div>
 
-             <div class="text-main">
-                  <h1>{{textMain}}</h1>
-             </div>
-             <div class="container-main">
-               <app-card-produto
-                 *ngFor="let produto of produtosMaisVendidos"
-                 [produto]="produto">
-               </app-card-produto>
-             </div>
-             <div class="text-main">
-              <h1>{{textMainPromocao}}</h1>
-              </div>
-             <div class="container-main">
-              <app-card-produto
-              *ngFor="let produto of produtosPromocao"
-              [exibirPromocao]="true"
-              [exibirPreco]="false"
-              [produto]="produto"
-              [desconto]="getDescontoPercentual(produto.price, produto.valorPromocional)"
-              >
-            </app-card-produto>
-            </div>
-     </div>
+    <div class="text-main">
+      <h1>{{ textMain }}</h1>
+    </div>
+    <div class="container-main">
+      <app-card-produto
+        *ngFor="let produto of produtosMaisVendidos"
+        [produto]="produto"
+      >
+      </app-card-produto>
+    </div>
+    <div class="text-main">
+      <h1>{{ textMainPromocao }}</h1>
+    </div>
+    <div class="container-main">
+      <app-card-produto
+        *ngFor="let produto of produtosPromocao"
+        [exibirPromocao]="true"
+        [exibirPreco]="false"
+        [produto]="produto"
+        [desconto]="
+          getDescontoPercentual(produto.price, produto.valorPromocional)
+        "
+      >
+      </app-card-produto>
+    </div>
+  </div>
 </main>
- 
 
-<div 
- style="display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
- "
->
- <input type="password"
-placeholder="Digite o seu CPF"
-style="width: 400px; height: 30px; border-radius: 5px; border: 1px solid #ccc; padding: 5px ; text-align: center; "
- >
- <input type="email"
-placeholder="Digite o seu email"
-style="width: 400px; height: 30px; border-radius: 5px; border: 1px solid #ccc; padding: 5px ; text-align: center;"
- >
-
- <input type="password"
- placeholder="Digite sua senha"
- style="width: 400px; height: 30px; border-radius: 5px; border: 1px solid #ccc; padding: 5px ; text-align: center;"
- >
-
-</div>
-
-
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  "
+></div>
