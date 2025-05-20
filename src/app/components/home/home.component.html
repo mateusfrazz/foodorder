@@ -1,38 +1,41 @@
 <main class="main d-flex justify-content-center">
-     <div class="main-container">
-          <div class="category-main">
-               <div class="category-text">
-                 <p>{{textCategoria}}</p>
-               </div>
-               <div class="category-list">
-                 <app-categoria-itens
-                   *ngFor="let categoria of categoriaProduto"
-                   [categoria]="categoria">
-                 </app-categoria-itens>
-               </div>
-             </div>
-
-             <div class="text-main">
-                  <h1>{{textMain}}</h1>
-             </div>
-             <div class="container-main">
-               <app-card-produto
-                 *ngFor="let produto of produtosMaisVendidos"
-                 [produto]="produto">
-               </app-card-produto>
-             </div>
-             <div class="text-main">
-              <h1>{{textMainPromocao}}</h1>
-              </div>
-             <div class="container-main">
-              <app-card-produto
-              *ngFor="let produto of produtosPromocao"
-              [exibirPromocao]="true"
-              [exibirPreco]="false"
-              [produto]="produto"
-              [desconto]="getDescontoPercentual(produto.price, produto.valorPromocional)"
-              >
-            </app-card-produto>
-            </div>
-     </div>
+  <div class="main-container">
+    <div class="category-main">
+      <div class="category-text">
+        <p>{{ textCategoria }}</p>
+      </div>
+      <div class="category-list">
+        <app-categoria-itens
+          *ngFor="let categoria of categoriaProduto"
+          [categoria]="categoria"
+        >
+        </app-categoria-itens>
+      </div>
+    </div>
+    <div class="text-main">
+      <h1>{{ textMain }}</h1>
+    </div>
+    <div class="container-main">
+      <app-card-produto
+        *ngFor="let produto of produtosMaisVendidos"
+        [produto]="produto"
+      >
+      </app-card-produto>
+    </div>
+    <div class="text-main">
+      <h1>{{ textMainPromocao }}</h1>
+    </div>
+    <div class="container-main">
+      <app-card-produto
+        *ngFor="let produto of produtosPromocao"
+        [exibirPromocao]="true"
+        [exibirPreco]="false"
+        [produto]="produto"
+        [desconto]="
+          getDescontoPercentual(produto.price, produto.valorPromocional)
+        "
+      >
+      </app-card-produto>
+    </div>
+  </div>
 </main>
