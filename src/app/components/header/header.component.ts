@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { Component, Output, EventEmitter } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @Component({
   selector: 'app-header',
-  imports: [
-    MatIconModule,
-    MatFormFieldModule
-  ],
+  imports: [MatIconModule, MatFormFieldModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
-export class HeaderComponent  {
+export class HeaderComponent {
+  @Output() categoriaSelecionada = new EventEmitter<string>();
+
+  selecionarCategoria(categoria: string) {
+    this.categoriaSelecionada.emit(categoria);
+  }
 }

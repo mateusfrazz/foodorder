@@ -1,55 +1,56 @@
-
-
 <header>
-    <nav class="d-flex flex-row justify-content-center align-items-center">
-      <div class="icon-page d-flex flex-row gap-2">
-           <div> 
-             <h3 class="fs-4">Bistrô Brasil</h3>
-           </div>
-           <div>
-               <mat-icon class="icon" >restaurant</mat-icon>
-           </div>
+  <nav class="d-flex flex-row justify-content-center align-items-center">
+    <div class="icon-page d-flex flex-row gap-2">
+      <div>
+        <h3 class="fs-4">Bistrô Brasil</h3>
       </div>
-      <div class="navcontent">
-        <ul class="d-flex flex-row justify-content-center align-items-center list-unstyled pt-3">
-          <li class="mx-2">
-            <a routerLink="/home" routerLinkActive="active">Inicio</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/Bebidas" routerLinkActive="active">Bebidas</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/churrasco" routerLinkActive="active">Churrasco</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/farmacia" routerLinkActive="active">Farmacia</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/pet" routerLinkActive="active">Pet</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/mercado" routerLinkActive="active">Mercado</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/lanches" routerLinkActive="active">Lanches</a>
-          </li>
-          <li class="mx-2">
-            <a routerLink="/favoritos">Favoritos</a>
-          </li>
-        </ul>
+      <div>
+        <mat-icon class="icon">restaurant</mat-icon>
       </div>
-      
-        <div class="searchBar">
-          <input 
-        class="form-control "
-        type="search" placeholder="Pesquisar"
+    </div>
+    <div class="navcontent">
+      <ul
+        class="d-flex flex-row justify-content-center align-items-center list-unstyled pt-3"
+      >
+        <li class="mx-2">
+          <a routerLink="/home" routerLinkActive="active">Inicio</a>
+        </li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('Bebidas')">
+          bebidas
+        </li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('churrasco')">
+          churrasco
+        </li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('farmacia')">
+          farmacia
+        </li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('pet')">pet</li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('mercado')">
+          mercado
+        </li>
+        <li class="mx-2 navClick" (click)="selecionarCategoria('lanches')">
+          lanches
+        </li>
+        <li class="mx-2">
+          <a routerLink="/favoritos">Favoritos</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="searchBar">
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Pesquisar"
         aria-label="Pesquisar"
-        >
-        </div>
-        <div class="cart d-flex flex-row justify-content-center align-items-center pt-3">
-            <li class="mx-2 list-unstyled">
-                <a routerLink="/cart-page"><mat-icon>add_shopping_cart</mat-icon></a>
-              </li>
-        </div>
-    </nav>
+      />
+    </div>
+    <div
+      class="cart d-flex flex-row justify-content-center align-items-center pt-3"
+    >
+      <li class="mx-2 list-unstyled">
+        <a routerLink="/cart-page"><mat-icon>add_shopping_cart</mat-icon></a>
+      </li>
+    </div>
+  </nav>
 </header>

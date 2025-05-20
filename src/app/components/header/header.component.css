@@ -9,25 +9,37 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-header a:hover {
-    transition: ease-in-out 0.3s;
-    color: #60B5FF;
-    cursor: pointer;
-    border-bottom: 1px solid #60B5FF;
-}
-
 nav {
-    gap: 200px;
-    padding-top: 4px;
+  gap: 200px;
+  padding-top: 4px;
 }
 
-nav ul li a {
-    font-size: 15px;
-    cursor: pointer;
+nav a {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+header a:hover {
+  transition: ease-in-out 0.3s;
+  color: #60b5ff;
+  cursor: pointer;
+  border-bottom: 1px solid #60b5ff;
 }
 
 .form-control {
-    width: 300px;
-    height: 40px;
-    margin-top: 10px;
- }
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+}
+
+nav .navClick {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+header .navClick:hover {
+  transition: ease-in-out 0.3s;
+  color: #60b5ff;
+  cursor: pointer;
+  border-bottom: 1px solid #60b5ff;
+}
