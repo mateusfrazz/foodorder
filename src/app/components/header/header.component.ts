@@ -11,6 +11,7 @@ export class HeaderComponent {
   @Output() categoriaSelecionada = new EventEmitter<string>();
 
   selecionarCategoria(categoria: string) {
+    console.log('Categoria clicada:', categoria);
     this.categoriaSelecionada.emit(categoria);
   }
 }

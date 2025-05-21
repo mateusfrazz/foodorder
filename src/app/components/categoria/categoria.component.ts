@@ -6,8 +6,6 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CategoriaProdutoService } from '../../services/categoriaProduto/categoria-produto.service';
-import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
 import { Produto } from '../../Interfaces/Produto';
@@ -16,12 +14,12 @@ import { FoodService } from '../../services/food/food.service';
 @Component({
   selector: 'app-categoria',
   standalone: true,
-  imports: [CommonModule, CategoriaItensComponent],
+  imports: [CommonModule, CategoriaItensComponent, CardProdutoComponent],
   templateUrl: './categoria.component.html',
-  styleUrl: './categoria.component.css',
+  styleUrls: ['./categoria.component.css'],
 })
 export class CategoriaComponent implements OnChanges, OnInit {
-  @Input() categoria: string[] = [];
+  @Input() categoria: string = '';
   allProducts: Produto[] = [];
   produtos: Produto[] = [];
 
@@ -31,11 +29,21 @@ export class CategoriaComponent implements OnChanges, OnInit {
     this.foodService.getProdutos().subscribe((dadoProduto) => {
       this.allProducts = dadoProduto;
     });
+    this.filtrarProdutos();
   }
 
   ngOnChanges(): void {
     this.produtos = this.allProducts.filter(
       (p) => p.category === this.categoria
     );
+    this.filtrarProdutos();
+  }
+
+  filtrarProdutos(): void {
+    if (this.categoria && this.allProducts.length > 0) {
+      this.produtos = this.allProducts.filter(
+        (p) => p.category.toLowerCase() === this.categoria.toLowerCase()
+      );
+    }
   }
 }

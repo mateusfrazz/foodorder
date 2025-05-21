@@ -1,5 +1,3 @@
-
-
 <div class="produto-modal">
   <div class="produto-card">
     <div class="card-header">
@@ -14,8 +12,11 @@
       <h2 class="produto-titulo">{{ produto.name }}</h2>
 
       <div class="produto-rating">
-        <mat-icon *ngFor="let star of [].constructor(5); let i = index" class="star-icon">
-          {{ i < produto.star ? 'star' : 'star_border' }}
+        <mat-icon
+          *ngFor="let star of [].constructor(5); let i = index"
+          class="star-icon"
+        >
+          {{ i < produto.star ? "star" : "star_border" }}
         </mat-icon>
       </div>
 
@@ -23,22 +24,31 @@
 
       <div class="produto-info">
         <span class="preco">💰 R$ {{ produto.price.toFixed(2) }}</span>
-        <span class="tempo"><mat-icon class="tempo-icon">schedule</mat-icon>{{ produto.cookTime }} min</span>
+        <span class="tempo"
+          ><mat-icon class="tempo-icon">schedule</mat-icon
+          >{{ produto.cookTime }} min</span
+        >
       </div>
 
       <div class="produto-extra">
-        <div><strong>Origem:</strong> {{ produto.origins.join(', ') }}</div>
-        <div><strong>Categoria:</strong> {{ produto.category.join(', ') }}</div>
+        <div><strong>Origem:</strong> {{ produto.origins.join(", ") }}</div>
+        <div><strong>Categoria:</strong> {{ produto.category }}</div>
       </div>
 
       <div class="acoes">
-        <button mat-stroked-button color="accent" (click)="adicionarAoCarrinho(produto)">
+        <button
+          mat-stroked-button
+          color="accent"
+          (click)="adicionarAoCarrinho(produto)"
+        >
           <mat-icon>add_shopping_cart</mat-icon>
           Adicionar ao carrinho
         </button>
 
         <button mat-icon-button color="warn" (click)="favoritar(produto)">
-          <mat-icon>{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+          <mat-icon>{{
+            produto.favorite ? "favorite" : "favorite_border"
+          }}</mat-icon>
         </button>
       </div>
     </div>

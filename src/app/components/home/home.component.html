@@ -1,5 +1,11 @@
 <main class="main d-flex justify-content-center">
-  <div class="main-container">
+  <app-header
+    (categoriaSelecionada)="onCategoriaSelecionada($event)"
+  ></app-header>
+
+  <app-categoria [categoria]="categoriaAtual"></app-categoria>
+
+  <div class="main-container" *ngIf="!categoriaAtual">
     <div class="category-main">
       <div class="category-text">
         <p>{{ textCategoria }}</p>

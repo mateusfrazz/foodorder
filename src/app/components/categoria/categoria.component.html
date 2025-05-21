@@ -1,1 +1,5 @@
-
+<h2 *ngIf="categoria">Produtos da cateogoria: {{ categoria }}</h2>
+<div class="main">
+  <app-card-produto *ngFor="let produto of produtos" [produto]="produto">
+  </app-card-produto>
+</div>

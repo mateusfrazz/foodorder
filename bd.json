@@ -11,7 +11,7 @@
       "origins": ["Estados Unidos"],
       "star": 4.5,
       "imageUrl": "assets/products/lanches/batata-frita/food-1.jpg",
-      "category": ["fastfood", "batatas"],
+      "category": "Lanches",
       "maisVendido": true,
       "promocao": true
     },
@@ -26,7 +26,7 @@
       "origins": ["us", "germany"],
       "star": 3.5,
       "imageUrl": "assets/products/lanches/hamburguers/food-2.jpg",
-      "category": ["combos", "hamburguers"],
+      "category": "Lanches",
       "maisVendido": true,
       "promocao": true
     },
@@ -41,7 +41,7 @@
       "origins": ["Brazil", "germany"],
       "star": 3.8,
       "imageUrl": "assets/products/lanches/hamburguers/food-3.jpg",
-      "category": ["combos", "hamburguers"],
+      "category": "Lanches",
       "maisVendido": true,
       "promocao": true
     },
@@ -56,7 +56,7 @@
       "origins": ["Italy", "germany"],
       "star": 3.9,
       "imageUrl": "assets/products/lanches/pizzas/food-4.jpg",
-      "category": ["pizzas"],
+      "category": "Lanches",
       "maisVendido": true,
       "promocao": true
     },
@@ -71,7 +71,7 @@
       "origins": ["Italy", "France"],
       "star": 3.7,
       "imageUrl": "assets/products/lanches/pizzas/food-5.jpg",
-      "category": ["pizzas"],
+      "category": "Lanches",
       "maisVendido": true,
       "promocao": true
     },
@@ -86,7 +86,7 @@
       "origins": ["México"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/cervejas/cervejaCorona.jpg",
-      "category": ["bebidas", "cervejas"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -101,7 +101,7 @@
       "origins": ["Irlanda"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/cervejas/cervejaGuinness.jpg",
-      "category": ["bebidas", "cervejas"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -116,7 +116,7 @@
       "origins": ["Itália"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/cervejas/cervejaPeroni.jpg",
-      "category": ["bebidas", "cervejas"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -131,7 +131,7 @@
       "origins": ["Estados Unidos"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/drinks/bluebarryMorango.jpg",
-      "category": ["bebidas", "drinks"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -146,7 +146,7 @@
       "origins": ["Brasil"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/drinks/capirinha.jpg",
-      "category": ["bebidas", "drinks"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -161,7 +161,7 @@
       "origins": ["Brasil"],
       "star": 4.5,
       "imageUrl": "assets/products/churrasco/calabresa.png",
-      "category": ["churrasco"],
+      "category": "Churrasco",
       "maisVendido": true,
       "promocao": true
     },
@@ -176,7 +176,7 @@
       "origins": ["Brasil"],
       "star": 4.5,
       "imageUrl": "assets/products/churrasco/churrascoQueijo.png",
-      "category": ["churrasco"],
+      "category": "Churrasco",
       "maisVendido": true,
       "promocao": true
     },
@@ -191,7 +191,7 @@
       "origins": ["Brasil"],
       "star": 4.5,
       "imageUrl": "assets/products/churrasco/picanha.png",
-      "category": ["churrasco"],
+      "category": "Churrasco",
       "maisVendido": true,
       "promocao": true
     },
@@ -206,7 +206,7 @@
       "origins": ["Estados Unidos"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/refrigerantes/cocaCola.png",
-      "category": ["bebidas", "refrigerantes"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     },
@@ -221,11 +221,10 @@
       "origins": ["Brasil"],
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/sucos/sucoGoiaba.png",
-      "category": ["bebidas", "sucos"],
+      "category": "Bebidas",
       "maisVendido": true,
       "promocao": true
     }
-    
   ],
   "categorias": [
     {
@@ -258,7 +257,6 @@
       "name": "Pet",
       "imageUrl": "assets/category/category.pet.jpg"
     }
-
   ],
   "favoritos": [
     {
