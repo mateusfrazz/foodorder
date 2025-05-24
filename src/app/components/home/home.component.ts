@@ -6,19 +6,12 @@ import { CardProdutoComponent } from '../card-produto/card-produto.component';
 import { CategoriaProdutoService } from '../../services/categoriaProduto/categoria-produto.service';
 import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
-import { HeaderComponent } from '../header/header.component';
-import { CategoriaComponent } from '../categoria/categoria.component';
+import { SharedService } from '../../services/sharedProduct/shared.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [
-    CommonModule,
-    CardProdutoComponent,
-    CategoriaItensComponent,
-    HeaderComponent,
-    CategoriaComponent,
-  ],
+  imports: [CommonModule, CardProdutoComponent, CategoriaItensComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -28,16 +21,20 @@ export class HomeComponent implements OnInit {
   categoriaProduto: Categoria[] = [];
   categoriaAtual = '';
 
-  //interporlaão de textos do template
+  //interporlação de textos do template home
   textCategoria =
     'Pedir seu delivery no Bistrô é rápido e prático! Conheça as categorias';
   textMain = ' Mais Vendidos no Bistrô';
   textMainPromocao = 'Promoções Especiais';
 
+  //injetando services
   constructor(
     private foodService: FoodService,
-    private categoriaService: CategoriaProdutoService
+    private categoriaService: CategoriaProdutoService,
+    private sharedService: SharedService
   ) {}
+
+  //passsando para o onInit tudo que vai ser renderizado ao carregar a page
   ngOnInit(): void {
     //get dos produtos mais vendidos
     this.foodService.getProdutos().subscribe((dado) => {

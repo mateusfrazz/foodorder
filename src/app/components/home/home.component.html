@@ -1,10 +1,7 @@
 <main class="main d-flex justify-content-center">
-  <app-header
-    (categoriaSelecionada)="onCategoriaSelecionada($event)"
-  ></app-header>
+  <!-- chamando o app categoria para fazer o filtro conforme a categoria clicada pelo usuario -->
 
-  <app-categoria [categoria]="categoriaAtual"></app-categoria>
-
+  <!-- exibe a estrutura home normalmente caso nenhuma categoria tenha sido selecionada -->
   <div class="main-container" *ngIf="!categoriaAtual">
     <div class="category-main">
       <div class="category-text">

@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { SharedService } from '../../services/sharedProduct/shared.service';
 @Component({
   selector: 'app-header',
   imports: [MatIconModule, MatFormFieldModule],
@@ -8,10 +9,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  @Output() categoriaSelecionada = new EventEmitter<string>();
+  constructor(private sharedService: SharedService) {}
 
   selecionarCategoria(categoria: string) {
     console.log('Categoria clicada:', categoria);
-    this.categoriaSelecionada.emit(categoria);
+    this.sharedService.selecionarCategoria(categoria);
   }
 }
