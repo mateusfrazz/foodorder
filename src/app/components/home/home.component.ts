@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
   produtosPromocao: Produto[] = []; //passando os produtos em promocao
   categoriaProduto: Categoria[] = [];
+  todosProdutos: Produto[] = [];
   categoriaAtual = '';
 
   //interporlação de textos do template home
@@ -36,20 +37,17 @@ export class HomeComponent implements OnInit {
 
   //passsando para o onInit tudo que vai ser renderizado ao carregar a page
   ngOnInit(): void {
-    //get dos produtos mais vendidos
-    this.foodService.getProdutos().subscribe((dado) => {
-      this.produtosMaisVendidos = dado.filter((produto) => produto.maisVendido);
-      this.produtosPromocao = dado.filter((produto) => produto.promocao);
+    //get dos produtos
+    this.foodService.getProdutos().subscribe((dados) => {
+      this.todosProdutos = dados;
+      this.produtosMaisVendidos = dados.filter(
+        (produto) => produto.maisVendido
+      );
+      this.produtosPromocao = dados.filter((produto) => produto.promocao);
     });
 
-    //get dos produtos em promocao
-    this.foodService.getProdutos().subscribe((dadoProduto) => {
-      this.produtosPromocao = dadoProduto.filter((produto) => produto.promocao);
-    });
-
-    //get das categorias
-    this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria) => {
-      this.categoriaProduto = dadoCategoria;
+    this.categoriaService.getCategoriaProduto().subscribe((dadosCategoria) => {
+      this.categoriaProduto = dadosCategoria;
     });
   }
 
