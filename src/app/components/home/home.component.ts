@@ -52,6 +52,10 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  /**
+   * Carrega os dados iniciais que são exibidos por padrão na home.
+   * (Mais vendidos, promoções).
+   */
   carregarDadosIniciais(): void {
     this.isLoading = true;
     this.foodService.getProdutos().subscribe({
@@ -71,6 +75,46 @@ export class HomeComponent implements OnInit {
         this.isLoading = false;
       },
     });
+  }
+
+  /**
+   * Inscreve-se no SharedService para ouvir mudanças de categoria.
+   */
+
+  inscreverNaMudancaDeCategoria(): void {
+    this.categoriaSubscription =
+      this.sharedService.categoriaSelecionada$.subscribe((categoria) => {
+        console.log(
+          '[HomeComponent] Categoria recebida do SharedService:',
+          categoria
+        );
+        // Se a categoria recebida for vazia, pode ser interpretada como "nenhuma seleção" ou "mostrar todos"
+        // Vamos tratar string vazia como um reset ou "mostrar tela inicial"
+        if (
+          !categoria ||
+          categoria.toLowerCase() === 'todos' ||
+          categoria === ''
+        ) {
+          this.categoriaAtual = 'todos';
+          this.produtosDaCategoriaSelecionada = []; // Limpa produtos da categoria
+          console.log(
+            '[HomeComponent] Categoria resetada ou "todos". Exibindo tela inicial.'
+          );
+        } else {
+          this.categoriaAtual = categoria;
+          this.carregarProdutosDaCategoria(categoria);
+        }
+      });
+  }
+
+  /**
+   * Busca produtos da API filtrados pela categoria fornecida.
+   * @param categoria A categoria para filtrar.
+   */
+  carregarProdutosDaCategoria(categoria: string): void {
+    this.isLoading = true;
+    this.produtosDaCategoriaSelecionada = []; //Limpa antes de carregar novos
+    // Usando o método getProdutosPorCategoria adicionado ao FoodService
   }
 
   //metodo para exibir a porcentagem de desconto
