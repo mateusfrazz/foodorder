@@ -115,6 +115,24 @@ export class HomeComponent implements OnInit {
     this.isLoading = true;
     this.produtosDaCategoriaSelecionada = []; //Limpa antes de carregar novos
     // Usando o método getProdutosPorCategoria adicionado ao FoodService
+    this.foodService.getProdutosPorCategoria(categoria).subscribe({
+      next: (produtosFiltrados) => {
+        this.produtosDaCategoriaSelecionada = produtosFiltrados;
+        this.isLoading = false;
+        console.log(
+          `[HomeComponent] Produtos da categoria '${categoria}' carregados:`,
+          produtosFiltrados
+        );
+      },
+      error: (err) => {
+        console.error(
+          `[HomeComponent] Erro ao carregar produtos da categoria '${categoria}':`,
+          err
+        );
+        this.produtosDaCategoriaSelecionada = [];
+        this.isLoading = false;
+      },
+    });
   }
 
   //metodo para exibir a porcentagem de desconto
@@ -126,9 +144,12 @@ export class HomeComponent implements OnInit {
     const desconto = ((precoOriginal - precoComDesconto) / precoOriginal) * 100;
     return Math.round(desconto);
   }
-
-  onCategoriaSelecionada(categoria: string) {
-    console.log('Categoria recebida no HomeComponent:', categoria);
-    this.categoriaAtual = categoria;
+  ngOnDestroy(): void {
+    if (this.categoriaSubscription) {
+      this.categoriaSubscription.unsubscribe();
+      console.log(
+        '[HomeComponent] Inscrição de categoria (SharedService) cancelada.'
+      );
+    }
   }
 }
