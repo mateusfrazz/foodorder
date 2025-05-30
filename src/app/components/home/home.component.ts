@@ -7,6 +7,7 @@ import { CategoriaProdutoService } from '../../services/categoriaProduto/categor
 import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
 import { SharedService } from '../../services/sharedProduct/shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -16,10 +17,16 @@ import { SharedService } from '../../services/sharedProduct/shared.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+  todosOsProdutos: Produto[] = [];
   produtosMaisVendidos: Produto[] = []; //passando os produtos mais vendidos
   produtosPromocao: Produto[] = []; //passando os produtos em promocao
-  categoriaProduto: Categoria[] = [];
+  produtosDaCategoriaSelecionada: Produto[] = [];
+
   categoriaAtual = '';
+  categoriaProduto: Categoria[] = [];
+  private categoriaSubscription!: Subscription;
+
+  isLoading: boolean = false; //feedback de carregamento
 
   //interporlação de textos do template home
   textCategoria =
@@ -36,20 +43,33 @@ export class HomeComponent implements OnInit {
 
   //passsando para o onInit tudo que vai ser renderizado ao carregar a page
   ngOnInit(): void {
-    //get dos produtos mais vendidos
-    this.foodService.getProdutos().subscribe((dado) => {
-      this.produtosMaisVendidos = dado.filter((produto) => produto.maisVendido);
-      this.produtosPromocao = dado.filter((produto) => produto.promocao);
-    });
-
-    //get dos produtos em promocao
-    this.foodService.getProdutos().subscribe((dadoProduto) => {
-      this.produtosPromocao = dadoProduto.filter((produto) => produto.promocao);
-    });
+    this.carregarDadosIniciais();
+    this.inscreverNaMudancaDeCategoria();
 
     //get das categorias
     this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria) => {
       this.categoriaProduto = dadoCategoria;
+    });
+  }
+
+  carregarDadosIniciais(): void {
+    this.isLoading = true;
+    this.foodService.getProdutos().subscribe({
+      next: (todosProdutos) => {
+        this.todosOsProdutos = todosProdutos; //guardando todos os produtos
+        this.produtosMaisVendidos = todosProdutos.filter(
+          (produto) => produto.maisVendido
+        );
+        this.produtosPromocao = todosProdutos.filter(
+          (produto) => produto.promocao
+        );
+        this.isLoading = false;
+        console.log('[HomeComponent] dados iniciais carregados');
+      },
+      error: (err) => {
+        console.error('erro ao carregar produtos inciaiis', err);
+        this.isLoading = false;
+      },
     });
   }
 
