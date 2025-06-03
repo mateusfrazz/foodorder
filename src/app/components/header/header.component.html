@@ -13,7 +13,7 @@
         class="d-flex flex-row justify-content-center align-items-center list-unstyled pt-3"
       >
         <li class="mx-2">
-          <a routerLink="/home" routerLinkActive="active">Inicio</a>
+          <a (click)="selecionarCategoria('Home')">Inicio</a>
         </li>
         <li class="mx-2 navClick" (click)="selecionarCategoria('Bebidas')">
           bebidas
@@ -31,8 +31,8 @@
         <li class="mx-2 navClick" (click)="selecionarCategoria('Lanches')">
           lanches
         </li>
-        <li class="mx-2">
-          <a routerLink="/favoritos">Favoritos</a>
+        <li class="mx-2" (click)="selecionarCategoria('Favoritos')">
+          favoritos
         </li>
       </ul>
     </div>

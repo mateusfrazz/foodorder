@@ -83,28 +83,31 @@ export class HomeComponent implements OnInit {
 
   inscreverNaMudancaDeCategoria(): void {
     this.categoriaSubscription =
-      this.sharedService.categoriaSelecionada$.subscribe((categoria) => {
-        console.log(
-          '[HomeComponent] Categoria recebida do SharedService:',
-          categoria
-        );
-        // Se a categoria recebida for vazia, pode ser interpretada como "nenhuma seleção" ou "mostrar todos"
-        // Vamos tratar string vazia como um reset ou "mostrar tela inicial"
-        if (
-          !categoria ||
-          categoria.toLowerCase() === 'todos' ||
-          categoria === ''
-        ) {
-          this.categoriaAtual = 'todos';
-          this.produtosDaCategoriaSelecionada = []; // Limpa produtos da categoria
+      this.sharedService.categoriaSelecionada$.subscribe(
+        (categoriaRecebida) => {
           console.log(
-            '[HomeComponent] Categoria resetada ou "todos". Exibindo tela inicial.'
+            '[HomeComponent] Categoria recebida do SharedService:',
+            categoriaRecebida
           );
-        } else {
-          this.categoriaAtual = categoria;
-          this.carregarProdutosDaCategoria(categoria);
+          // Se a categoria recebida for vazia, pode ser interpretada como "nenhuma seleção" ou "mostrar todos"
+          // Vamos tratar string vazia como um reset ou "mostrar tela inicial"
+          if (
+            !categoriaRecebida ||
+            categoriaRecebida.toLowerCase() === 'todos' ||
+            categoriaRecebida.trim().toLowerCase() === '' ||
+            categoriaRecebida.trim().toLowerCase() === 'home'
+          ) {
+            this.categoriaAtual = '';
+            this.produtosDaCategoriaSelecionada = []; // Limpa produtos da categoria
+            console.log(
+              '[HomeComponent] Categoria resetada ou "todos". Exibindo tela inicial.'
+            );
+          } else {
+            this.categoriaAtual = categoriaRecebida;
+            this.carregarProdutosDaCategoria(categoriaRecebida);
+          }
         }
-      });
+      );
   }
 
   /**
