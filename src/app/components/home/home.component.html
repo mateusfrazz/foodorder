@@ -61,6 +61,7 @@
       >
     </div>
 
+    <!-- Exibe a categoria selecionada -->
     <div class="main-container-categoria" *ngIf="categoriaAtual">
       <div class="text-main">
         <h1>Produtos da Categoria: {{ categoriaAtual | titlecase }}</h1>
@@ -79,12 +80,13 @@
         </app-card-produto>
       </div>
       <ng-template #noProdutosCategoria>
-        <p>
+        <p class="text-center">
           Nenhum produto encontrado para a categoria "{{
             categoriaAtual | titlecase
           }}".
         </p>
       </ng-template>
     </div>
+    <!--Fim da exibição-->
   </div>
 </main>
