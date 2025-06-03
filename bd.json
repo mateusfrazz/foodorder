@@ -976,7 +976,6 @@
       "star": 4.9,
       "imageUrl": "assets/products/pet/premier.png",
       "category": "Pet",
-
       "maisVendido": true,
       "promocao": true
     }
@@ -1014,10 +1013,19 @@
     }
   ],
   "favoritos": [
-    {
-      "id": 1,
-      "name": "Batata Frita Crocante",
-      "imageUrl": "assets/products/food-8.jpg"
+    { "id": 72,
+      "name": "Ração Premier Raças Pequenas Filhotes (2.5kg)",
+      "description": "O melhor começo para seu filhote de raça pequena! Ração Premier com desenvolvimento superior e sabor irresistível.",
+      "cookTime": "",
+      "price": 115.00,
+      "valorPromocional": 105.00,
+      "favorite": true,
+      "origins": ["Brasil"],
+      "star": 4.9,
+      "imageUrl": "assets/products/pet/premier.png",
+      "category": "Pet",
+      "maisVendido": true,
+      "promocao": true
     }
   ]
 }
