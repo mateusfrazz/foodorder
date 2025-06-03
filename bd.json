@@ -222,8 +222,6 @@
       "star": 4.5,
       "imageUrl": "assets/products/bebidas/sucos/sucoGoiaba.png",
       "category": "Bebidas",
-<<<<<<< HEAD
-=======
       "maisVendido": true,
       "promocao": true
     },
@@ -978,7 +976,7 @@
       "star": 4.9,
       "imageUrl": "assets/products/pet/premier.png",
       "category": "Pet",
->>>>>>> feature/addProdutosBD
+
       "maisVendido": true,
       "promocao": true
     }
