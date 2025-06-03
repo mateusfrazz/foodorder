@@ -36,4 +36,8 @@ export class FoodService {
       return this.getProdutos();
     }
   }
+
+  updateProduto(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.apiUrl}/${produto.id}`, produto);
+  }
 }
