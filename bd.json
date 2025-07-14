@@ -716,7 +716,7 @@
       "origins": ["Brasil"],
       "star": 4.3,
       "imageUrl": "assets/products/mercado/pao-forma-tradicional-450g.jpg",
-      "category": "Mercado",
+      "category": "",
       "maisVendido": false,
       "promocao": true
     },
@@ -732,7 +732,7 @@
       "origins": ["Brasil"],
       "star": 4.3,
       "imageUrl": "assets/products/mercado/construcao/extensao.png",
-      "category": "Mercado",
+      "category": "",
       "maisVendido": false,
       "promocao": true
     },
