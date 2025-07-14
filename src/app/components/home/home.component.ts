@@ -8,6 +8,7 @@ import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
 import { SharedService } from '../../services/sharedProduct/shared.service';
 import { Subscription } from 'rxjs';
+import { FavoritosService } from '../../services/favoritosService/favoritos.service';
 
 @Component({
   selector: 'app-home',
@@ -28,17 +29,18 @@ export class HomeComponent implements OnInit {
 
   isLoading: boolean = false; //feedback de carregamento
 
-  //interporlação de textos do template home
+  //<---- interporlação de textos [homeComponent] --->
   textCategoria =
     'Pedir seu delivery no Bistrô é rápido e prático! Conheça as categorias';
   textMain = ' Mais Vendidos no Bistrô';
   textMainPromocao = 'Promoções Especiais';
 
-  //injetando services
+  //<----------  services ----------->
   constructor(
-    private foodService: FoodService,
-    private categoriaService: CategoriaProdutoService,
-    private sharedService: SharedService
+    private foodService: FoodService, //injetando o FoodService para acessar os produtos
+    private categoriaService: CategoriaProdutoService, // Injetando o serviço de categorias
+    private sharedService: SharedService, // Injetando o SharedService para ouvir mudanças de categoria
+    private favoriteService: FavoritosService // Injetando o serviço de favoritos
   ) {}
 
   //passsando para o onInit tudo que vai ser renderizado ao carregar a page

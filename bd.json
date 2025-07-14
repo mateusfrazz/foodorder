@@ -7,7 +7,7 @@
       "cookTime": "10-20",
       "price": 22.90,
       "valorPromocional": 17.90,
-      "favorite": false,
+      "favorite": true,
       "origins": ["Estados Unidos"],
       "star": 4.5,
       "imageUrl": "assets/products/lanches/batata-frita/food-1.jpg",
