@@ -46,7 +46,6 @@ Você pode visualizar o projeto em funcionamento através deste link:
 
 ➡️ **[Acesse a demonstração ao vivo](https://seu-link-de-deploy.com)**
 
-*(Substitua `https://seu-link-de-deploy.com` pelo link real do seu deploy no Vercel, Netlify, GitHub Pages, etc.)*
 
 ---
 
