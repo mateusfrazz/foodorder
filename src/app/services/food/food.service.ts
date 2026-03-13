@@ -15,6 +15,11 @@ export class FoodService {
     return this.http.get<Produto[]>(this.apiUrl);
   }
 
+  updateProduto(produto: Produto): Observable<Produto> {
+    const url = `${this.apiUrl}/${produto.id}`;
+    return this.http.put<Produto>(url, produto);
+  }
+
   getProdutosEmPromocao(): Observable<Produto[]> {
     return this.getProdutos().pipe(
       map((produtos) => produtos.filter((produto) => produto.promocao === true))
@@ -22,7 +27,11 @@ export class FoodService {
   }
 
   getProdutosPorCategoria(categoria: string): Observable<Produto[]> {
-    if (categoria && categoria.toLowerCase() !== 'todos' && categoria !== '') {
+    if (categoria && categoria.toLowerCase() === 'favoritos') {
+      const urlComFiltro = `${this.apiUrl}?favorite=true`;
+      console.log(`[FoodService] Buscando produtos favoritos em ${urlComFiltro}`);
+      return this.http.get<Produto[]>(urlComFiltro);
+    } else if (categoria && categoria.toLowerCase() !== 'todos' && categoria !== '') {
       const urlComFiltro = `${this.apiUrl}?category=${categoria}`;
       console.log(
         `[FoodService] Buscando produtos pela categoria (filtro servidor): ${categoria} em ${urlComFiltro}`

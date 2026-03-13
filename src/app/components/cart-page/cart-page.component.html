@@ -1,0 +1,67 @@
+<div class="cart-container">
+  <div class="cart-header">
+    <h1><mat-icon>shopping_cart</mat-icon> Seu Carrinho</h1>
+    <a routerLink="/" class="back-link"><mat-icon>arrow_back</mat-icon> Voltar às compras</a>
+  </div>
+
+  <div class="empty-cart" *ngIf="cartItems.length === 0">
+    <mat-icon class="empty-icon">remove_shopping_cart</mat-icon>
+    <p>Seu carrinho está vazio no momento.</p>
+    <a routerLink="/" class="explore-btn">Explorar Produtos</a>
+  </div>
+
+  <div class="cart-content" *ngIf="cartItems.length > 0">
+    <!-- Lista de Itens -->
+    <div class="cart-items">
+      <div class="cart-item glass-effect" *ngFor="let item of cartItems">
+        <img [src]="item.produto.imageUrl" [alt]="item.produto.name" class="item-img" />
+        
+        <div class="item-details">
+          <h3 class="item-title">{{ item.produto.name }}</h3>
+          <p class="item-category">{{ item.produto.category }}</p>
+          <p class="item-price">Unidade: R$ {{ (item.produto.promocao ? item.produto.valorPromocional : item.produto.price) | number:'1.2-2' }}</p>
+        </div>
+
+        <div class="item-actions">
+          <div class="quantity-controls">
+            <button class="qty-btn" (click)="changeQuantity(item.produto.id, item.quantidade, -1)">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <span class="qty-display">{{ item.quantidade }}</span>
+            <button class="qty-btn" (click)="changeQuantity(item.produto.id, item.quantidade, 1)">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          
+          <div class="item-total">
+            R$ {{ item.precoTotal | number:'1.2-2' }}
+          </div>
+          
+          <button class="remove-btn" (click)="removeItem(item.produto.id)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resumo do Pedido -->
+    <div class="cart-summary glass-effect">
+      <h3>Resumo do Pedido</h3>
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span>R$ {{ totalPrice | number:'1.2-2' }}</span>
+      </div>
+      <div class="summary-line">
+        <span>Taxa de Entrega</span>
+        <span class="free">Grátis</span>
+      </div>
+      <div class="summary-total">
+        <span>Total</span>
+        <span>R$ {{ totalPrice | number:'1.2-2' }}</span>
+      </div>
+      
+      <button class="checkout-btn" (click)="checkout()">Finalizar Compra</button>
+      <button class="clear-btn" (click)="clearCart()">Esvaziar Carrinho</button>
+    </div>
+  </div>
+</div>

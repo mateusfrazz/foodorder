@@ -1,56 +1,58 @@
-<header>
-  <nav class="d-flex flex-row justify-content-center align-items-center">
-    <div class="icon-page d-flex flex-row gap-2">
-      <div>
-        <h3 class="fs-4">Bistrô Brasil</h3>
-      </div>
-      <div>
-        <mat-icon class="icon">restaurant</mat-icon>
-      </div>
-    </div>
-    <div class="navcontent">
-      <ul
-        class="d-flex flex-row justify-content-center align-items-center list-unstyled pt-3"
-      >
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Home')">
-          Inicio
-        </li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Bebidas')">
-          bebidas
-        </li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Churrasco')">
-          churrasco
-        </li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Farmacia')">
-          farmacia
-        </li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Pet')">pet</li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Mercado')">
-          mercado
-        </li>
-        <li class="mx-2 navClick" (click)="selecionarCategoria('Lanches')">
-          lanches
-        </li>
-        <li class="mx-2" (click)="selecionarCategoria('Favoritos')">
-          favoritos
-        </li>
-      </ul>
+<header class="app-header glass-effect">
+  <div class="header-container">
+    
+    <!-- Logo -->
+    <div class="logo-section" (click)="selecionarCategoria('Home')">
+      <mat-icon class="logo-icon">restaurant</mat-icon>
+      <h3 class="logo-text">Bistrô Brasil</h3>
     </div>
 
-    <div class="searchBar">
-      <input
-        class="form-control"
-        type="search"
-        placeholder="Pesquisar"
-        aria-label="Pesquisar"
-      />
+    <!-- Navegação -->
+    <nav class="nav-links">
+      <ul>
+        <li class="nav-item" (click)="selecionarCategoria('Home')">Início</li>
+        <li class="nav-item" (click)="selecionarCategoria('Bebidas')">Bebidas</li>
+        <li class="nav-item" (click)="selecionarCategoria('Churrasco')">Churrasco</li>
+        <li class="nav-item" (click)="selecionarCategoria('Farmacia')">Farmácia</li>
+        <li class="nav-item" (click)="selecionarCategoria('Pet')">Pet</li>
+        <li class="nav-item" (click)="selecionarCategoria('Mercado')">Mercado</li>
+        <li class="nav-item" (click)="selecionarCategoria('Lanches')">Lanches</li>
+      </ul>
+    </nav>
+
+    <!-- Ações e Busca -->
+    <div class="header-actions">
+      <div class="search-box">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input class="search-input" type="text" placeholder="Pesquisar pratos..." (input)="onBuscar($event)" />
+      </div>
+      
+      <div class="cart-action text-danger" (click)="selecionarCategoria('Favoritos')" title="Meus Favoritos">
+        <mat-icon class="cart-icon" style="color: var(--danger-color)">favorite</mat-icon>
+      </div>
+
+      <!-- User Logado / Login -->
+      <ng-container *ngIf="isLoggedIn; else loginBtn">
+        <div class="cart-action user-profile" title="Meu Perfil">
+          <mat-icon class="cart-icon" style="color: var(--primary-color)">account_circle</mat-icon>
+          <span class="user-email">{{ userEmail?.split('@')?.[0] }}</span>
+        </div>
+        <div class="cart-action text-danger" (click)="logout()" title="Sair da Conta">
+          <mat-icon class="cart-icon">logout</mat-icon>
+        </div>
+      </ng-container>
+
+      <ng-template #loginBtn>
+        <div class="cart-action" routerLink="/login" title="Entrar na minha conta">
+          <mat-icon class="cart-icon">person</mat-icon>
+        </div>
+      </ng-template>
+      
+      <div class="cart-action" routerLink="/cart-page" title="Carrinho de Compras">
+        <mat-icon class="cart-icon">shopping_bag</mat-icon>
+        <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
+      </div>
     </div>
-    <div
-      class="cart d-flex flex-row justify-content-center align-items-center pt-3"
-    >
-      <li class="mx-2 list-unstyled">
-        <a routerLink="/cart-page"><mat-icon>add_shopping_cart</mat-icon></a>
-      </li>
-    </div>
-  </nav>
+    
+  </div>
 </header>

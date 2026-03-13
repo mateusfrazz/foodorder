@@ -1,10 +1,13 @@
-<div class="category-item">
-  <div class="img-category-item">
-    <a (click)="selecionarCategoriaAtual(categoria.name)">
-      <img src="{{ categoria.imageUrl }}" alt="" />
-    </a>
-  </div>
-  <div class="text-category-item">
-    {{ categoria.name }}
+<div class="category-unique-card" (click)="selecionarCategoriaAtual(categoria.name)">
+  <img [src]="categoria.imageUrl" [alt]="categoria.name" class="category-bg" loading="lazy" />
+  
+  <div class="category-overlay"></div>
+  
+  <div class="category-info">
+    <h3 class="category-name">{{ categoria.name }}</h3>
+    <div class="category-action">
+      <span>Ver opções</span>
+      <span class="category-arrow">&#8594;</span>
+    </div>
   </div>
 </div>

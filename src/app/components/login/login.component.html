@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="login-card glass-effect">
+    <div class="login-header">
+      <h2>Entrar no Bistrô Brasil</h2>
+      <p>Acesse para pedir seus pratos favoritos</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      
+      <!-- E-mail -->
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input 
+          id="email" 
+          type="email" 
+          formControlName="email" 
+          [ngClass]="{ 'is-invalid': isSubmitted && fc['email'].errors }"
+          placeholder="exemplo@email.com"
+        >
+        <div class="error-feedback" *ngIf="isSubmitted && fc['email'].errors">
+          <span *ngIf="fc['email'].errors['required']">O e-mail é obrigatório.</span>
+          <span *ngIf="fc['email'].errors['email']">Por favor, insira um e-mail válido.</span>
+        </div>
+      </div>
+
+      <!-- Senha -->
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input 
+          id="password" 
+          type="password" 
+          formControlName="password" 
+          [ngClass]="{ 'is-invalid': isSubmitted && fc['password'].errors }"
+          placeholder="Mínimo 6 caracteres"
+        >
+        <div class="error-feedback" *ngIf="isSubmitted && fc['password'].errors">
+          <span *ngIf="fc['password'].errors['required']">A senha é obrigatória.</span>
+          <span *ngIf="fc['password'].errors['minlength']">A senha deve ter pelo menos 6 caracteres.</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
+        Acessar Conta
+      </button>
+
+      <div class="signup-link">
+        Ainda não tem conta? <a href="javascript:void(0)">Cadastre-se</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,45 +1,186 @@
-header {
-  position: fixed;
+.app-header {
+  position: sticky;
   top: 0;
   width: 100%;
   height: 80px;
-  background-color: #fff;
-  border-bottom: 1px solid #1f1e1e;
-  z-index: 999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: var(--glass-bg);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-nav {
-  gap: 200px;
-  padding-top: 4px;
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
-  font-size: 15px;
+/* Logo */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   cursor: pointer;
+  transition: var(--transition-default);
+}
+.logo-section:hover {
+  transform: scale(1.05);
+}
+.logo-icon {
+  color: var(--accent-color);
+  font-size: 32px;
+  height: 32px;
+  width: 32px;
+}
+.logo-text {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+  margin: 0;
 }
 
-header a:hover {
-  transition: ease-in-out 0.3s;
-  color: #60b5ff;
+.user-profile {
+  width: auto;
+  border-radius: 20px;
+  padding: 0 12px;
+  gap: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color);
+  max-width: 90px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+
+/* Navegação */
+.nav-links ul {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+.nav-item {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   cursor: pointer;
-  border-bottom: 1px solid #60b5ff;
+  position: relative;
+  transition: var(--transition-default);
+  text-transform: capitalize;
+}
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--accent-color);
+  transition: var(--transition-default);
+}
+.nav-item:hover {
+  color: var(--accent-color);
+}
+.nav-item:hover::after {
+  width: 100%;
 }
 
-.form-control {
-  width: 300px;
-  height: 40px;
-  margin-top: 10px;
+/* Ações (Busca e Carrinho) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-nav .navClick {
-  font-size: 15px;
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius-main);
+  padding: 8px 16px;
+  transition: var(--transition-default);
+  border: 1px solid transparent;
+}
+.search-box:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.1);
+}
+.search-icon {
+  color: var(--text-secondary);
+  font-size: 20px;
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
+}
+.search-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: inherit;
+  width: 200px;
+}
+.search-input:focus {
+  outline: none;
+}
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.cart-action {
+  position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  transition: var(--transition-default);
 }
-
-header .navClick:hover {
-  transition: ease-in-out 0.3s;
-  color: #60b5ff;
-  cursor: pointer;
-  border-bottom: 1px solid #60b5ff;
+.cart-action:hover {
+  background: var(--accent-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-hover);
+}
+.cart-icon {
+  font-size: 22px;
+  width: 22px;
+  height: 22px;
+  color: var(--text-primary);
+}
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--danger-color);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--bg-secondary);
 }

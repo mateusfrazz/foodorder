@@ -1,13 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilos Globais e Variáveis de Design */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
-*{
-    box-sizing: border-box;
+
+:root {
+  /* Cores Principais - Dark Mode Moderno com Laranja Vibrante */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-color: #ff5722; /* Laranja Delivery */
+  --accent-hover: #e64a19;
+  --success-color: #4caf50;
+  --danger-color: #f44336;
+  
+  /* Efeitos e Sombras */
+  --glass-bg: rgba(30, 30, 30, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --box-shadow-hover: 0 8px 30px rgba(255, 87, 34, 0.2);
+  --transition-default: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --border-radius-main: 16px;
+  --border-radius-sm: 8px;
 }
 
-body{
-    margin: 0;
-    font-family:quicksand, sans-serif;
-    font-size: 18px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Skeleton Loading Animation */
+@keyframes skeleton-loading {
+  0% { background-color: var(--bg-secondary); }
+  50% { background-color: var(--bg-tertiary); }
+  100% { background-color: var(--bg-secondary); }
+}
+
+.skeleton {
+  animation: skeleton-loading 1.5s infinite ease-in-out;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Utilities Globais */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}

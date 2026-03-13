@@ -51,4 +51,9 @@ export class CardProdutoComponent {
       data: this.produto
     })
    }
+
+   getBannerColor(id: number): string {
+    const colors = ['bg-yellow', 'bg-red', 'bg-orange'];
+    return colors[id % colors.length];
+   }
 }

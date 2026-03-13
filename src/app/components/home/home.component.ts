@@ -8,11 +8,12 @@ import { Categoria } from '../../Interfaces/CategoriaProduto';
 import { CategoriaItensComponent } from '../categoria-itens/categoria-itens.component';
 import { SharedService } from '../../services/sharedProduct/shared.service';
 import { Subscription } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CardProdutoComponent, CategoriaItensComponent],
+  imports: [CommonModule, CardProdutoComponent, CategoriaItensComponent, MatIconModule],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
@@ -25,6 +26,9 @@ export class HomeComponent implements OnInit {
   categoriaAtual = '';
   categoriaProduto: Categoria[] = [];
   private categoriaSubscription!: Subscription;
+  
+  termoBuscaAtual = '';
+  private buscaSubscription!: Subscription;
 
   isLoading: boolean = false; //feedback de carregamento
 
@@ -45,6 +49,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.carregarDadosIniciais();
     this.inscreverNaMudancaDeCategoria();
+    this.inscreverNaBusca();
 
     //get das categorias
     this.categoriaService.getCategoriaProduto().subscribe((dadoCategoria) => {
@@ -111,6 +116,38 @@ export class HomeComponent implements OnInit {
   }
 
   /**
+   * Inscreve-se no SharedService para ouvir digitação na Barra de Busca.
+   */
+  inscreverNaBusca(): void {
+    this.buscaSubscription = this.sharedService.termoDeBusca$.subscribe(
+      (termo) => {
+        this.termoBuscaAtual = termo;
+        
+        if (termo && termo.trim().length > 0) {
+          // Muda o estado da tela para "Busca"
+          this.categoriaAtual = `Busca: ${termo}`;
+          this.realizarBuscaInLocal(termo);
+        } else {
+          // Se limpou o input, volta para Home padrão
+          this.sharedService.selecionarCategoria('Home');
+        }
+      }
+    );
+  }
+
+  /**
+   * Filtra os itens da API localmente pelo Nome ou Descrição
+   */
+  realizarBuscaInLocal(termo: string): void {
+     const t = termo.toLowerCase().trim();
+     this.produtosDaCategoriaSelecionada = this.todosOsProdutos.filter(
+        // Retorna se o nome do produto ou descrição incluirem o formato de texto
+        produto => produto.name.toLowerCase().includes(t) || 
+                   (produto.description && produto.description.toLowerCase().includes(t))
+     );
+  }
+
+  /**
    * Busca produtos da API filtrados pela categoria fornecida.
    * @param categoria A categoria para filtrar.
    */
@@ -147,12 +184,41 @@ export class HomeComponent implements OnInit {
     const desconto = ((precoOriginal - precoComDesconto) / precoOriginal) * 100;
     return Math.round(desconto);
   }
+
+  //Metodo para lidar com clique no icone favorito do ProdutoCard
+  alternarFavorito(produto: Produto): void {
+    const estadoAnterior = produto.favorite;
+    produto.favorite = !produto.favorite;
+
+    this.foodService.updateProduto(produto).subscribe({
+      next: (produtoAtualizado) => {
+        console.log(`Produto ${produto.name} salvo com sucesso. Favorito: ${produto.favorite}`);
+        
+        // Se a gente tiver visualizando a aba 'Favoritos' e o produto for desfavoritado, 
+        // remove ele temporariamente da tela para dar o feedback visual
+        if (this.categoriaAtual.toLowerCase() === 'favoritos' && !produtoAtualizado.favorite) {
+          this.produtosDaCategoriaSelecionada = this.produtosDaCategoriaSelecionada.filter(
+            p => p.id !== produto.id
+          );
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao atualizar produto', err);
+        produto.favorite = estadoAnterior; // Reverte se falhar
+      }
+    });
+  }
+
   ngOnDestroy(): void {
     if (this.categoriaSubscription) {
       this.categoriaSubscription.unsubscribe();
       console.log(
         '[HomeComponent] Inscrição de categoria (SharedService) cancelada.'
       );
+    }
+    
+    if (this.buscaSubscription) {
+       this.buscaSubscription.unsubscribe();
     }
   }
 }

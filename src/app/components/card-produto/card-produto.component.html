@@ -1,39 +1,33 @@
-<div class="main-content">
-  <ul>
-    <li>
-      <div class="produto-card">
-        <img src="{{ produto.imageUrl }}" alt="Imagem do produto" />
-        <div class="content">
-          <h4>{{ produto.name }}</h4>
-          <p>{{ produto.category }}</p>
-          <div class="contentfavorite d-flex justify-content-between">
-            <div class="content-price">
-              <div class="price-padrao">
-                <p *ngIf="exibirPreco" class="precoPadraosemDesconto">R$ {{ produto.price }}</p>
-                <p *ngIf="exibirPromocao" class="precoPadrao">R$ {{ produto.price }}</p>
-              </div>
-              <div class="price-desconto d-flex flex-column">
-                <p 
-                *ngIf="exibirPromocao" class="precoPromocao">R$ {{ produto.valorPromocional }}
-                </p>
-                  <mat-chip-set *ngIf="desconto > 0 " class="d-flex justify-content-center align-items-center">
-                    <mat-chip class="chip-desconto d-flex justify-content-center align-items-center">
-                      <p class="chip-texto">
-                        {{desconto}} OFF%
-                      </p>
-                    </mat-chip> 
-                  </mat-chip-set> 
-              </div>
-            </div>
-            <button mat-icon-button (click)="favoritarProduto(produto)" class="btn-favoritar">
-              <mat-icon color="warn">{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
-            </button>
-          </div>
-          <button class="ver-mais-btn" (click)="openDetalheProduto()">
-            Ver Mais
-          </button>
-        </div>
+<div class="product-card">
+  <div class="card-image-wrapper">
+    <img [src]="produto.imageUrl" [alt]="produto.name" class="card-img" loading="lazy" />
+    <span class="discount-badge" *ngIf="desconto > 0">-{{ desconto }}%</span>
+    <button mat-icon-button class="favorite-btn" [class.is-favorite]="produto.favorite" (click)="favoritarProduto(produto)">
+      <mat-icon>{{ produto.favorite ? 'favorite' : 'favorite_border' }}</mat-icon>
+    </button>
+  </div>
+
+  <div class="card-content">
+    <div class="card-header">
+      <span class="category-pill">{{ produto.category }}</span>
+      <div class="rating">
+        <mat-icon class="star-icon">star</mat-icon>
+        <span>{{ produto.star }}</span>
       </div>
-    </li>
-  </ul>
+    </div>
+    
+    <h4 class="product-title" [title]="produto.name">{{ produto.name }}</h4>
+    
+    <div class="price-section">
+      <div class="prices">
+        <span class="old-price" *ngIf="exibirPromocao">R$ {{ produto.price | number:'1.2-2' }}</span>
+        <span class="current-price" *ngIf="exibirPromocao">R$ {{ produto.valorPromocional | number:'1.2-2' }}</span>
+        <span class="current-price" *ngIf="!exibirPromocao && exibirPreco">R$ {{ produto.price | number:'1.2-2' }}</span>
+      </div>
+      
+      <button class="add-to-cart-btn" (click)="openDetalheProduto()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
 </div>

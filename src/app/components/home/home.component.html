@@ -1,4 +1,5 @@
 <main class="main d-flex justify-content-center flex-column">
+  
   <div class="category-main" *ngIf="categoriaProduto.length > 0">
     <div class="category-text">
       <p>{{ textCategoria }}</p>
@@ -12,81 +13,71 @@
     </div>
   </div>
 
-  <div
-    *ngIf="isLoading"
-    style="text-align: center; padding: 20px; font-size: 1.2em"
-  >
-    <p>Carregando...</p>
+  <!-- SKELETON LOADING -->
+  <div *ngIf="isLoading" class="skeleton-container container-main">
+    <div class="skeleton-card skeleton" *ngFor="let i of [1,2,3,4,5,6,7,8]"></div>
   </div>
 
   <div *ngIf="!isLoading">
+    
     <div class="main-container-inicial" *ngIf="!categoriaAtual">
+      
+      <!-- Mais Vendidos -->
       <div class="text-main">
         <h1>{{ textMain }}</h1>
       </div>
-      <div
-        class="container-main"
-        *ngIf="produtosMaisVendidos.length > 0; else noMaisVendidos"
-      >
+      <div class="container-main" *ngIf="produtosMaisVendidos.length > 0; else noMaisVendidos">
         <app-card-produto
           *ngFor="let produto of produtosMaisVendidos"
           [produto]="produto"
-        >
-        </app-card-produto>
+          (onFavoritarProduto)="alternarFavorito($event)"
+        ></app-card-produto>
       </div>
-      <ng-template #noMaisVendidos
-        ><p>Nenhum produto em "Mais Vendidos" no momento.</p></ng-template
-      >
+      <ng-template #noMaisVendidos>
+        <p class="empty-state">Nenhum produto em "Mais Vendidos" no momento.</p>
+      </ng-template>
 
+      <!-- Promoções -->
       <div class="text-main">
         <h1>{{ textMainPromocao }}</h1>
       </div>
-      <div
-        class="container-main"
-        *ngIf="produtosPromocao.length > 0; else noPromocoes"
-      >
+      <div class="container-promo" *ngIf="produtosPromocao.length > 0; else noPromocoes">
         <app-card-produto
           *ngFor="let produto of produtosPromocao"
           [exibirPromocao]="true"
           [exibirPreco]="false"
           [produto]="produto"
-          [desconto]="
-            getDescontoPercentual(produto.price, produto.valorPromocional)
-          "
-        >
-        </app-card-produto>
+          [desconto]="getDescontoPercentual(produto.price, produto.valorPromocional)"
+          (onFavoritarProduto)="alternarFavorito($event)"
+        ></app-card-produto>
       </div>
-      <ng-template #noPromocoes
-        ><p>Nenhuma promoção especial no momento.</p></ng-template
-      >
+      <ng-template #noPromocoes>
+        <p class="empty-state">Nenhuma promoção especial no momento.</p>
+      </ng-template>
+
     </div>
 
-    <!-- Exibe a categoria selecionada -->
+    <!-- Exibição por Categoria -->
     <div class="main-container-categoria" *ngIf="categoriaAtual">
       <div class="text-main">
-        <h1>Produtos da Categoria: {{ categoriaAtual | titlecase }}</h1>
+        <h1>Produtos da Categoria: <span class="highlight">{{ categoriaAtual | titlecase }}</span></h1>
       </div>
-      <div
-        class="container-main"
-        *ngIf="
-          produtosDaCategoriaSelecionada.length > 0;
-          else noProdutosCategoria
-        "
-      >
+      
+      <div class="container-main" *ngIf="produtosDaCategoriaSelecionada.length > 0; else noProdutosCategoria">
         <app-card-produto
           *ngFor="let produto of produtosDaCategoriaSelecionada"
           [produto]="produto"
-        >
-        </app-card-produto>
+          (onFavoritarProduto)="alternarFavorito($event)"
+        ></app-card-produto>
       </div>
+      
       <ng-template #noProdutosCategoria>
-        <p class="text-center">
-          Nenhum produto encontrado para a categoria "{{
-            categoriaAtual | titlecase
-          }}".
-        </p>
+        <div class="empty-state text-center">
+          <mat-icon class="empty-icon">search_off</mat-icon>
+          <p>Nenhum produto encontrado para a categoria "{{ categoriaAtual | titlecase }}".</p>
+        </div>
       </ng-template>
     </div>
-    <!--Fim da exibição-->
+
   </div>
 </main>

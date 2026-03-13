@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
-  textVar: string = 'hey';
+  textVar: string = 'Mateus Frazão';
 
   alterarString(text: string) {
     this.textVar = text;
